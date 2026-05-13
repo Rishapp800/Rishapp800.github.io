@@ -784,6 +784,160 @@
 
   @media (max-width: 1100px) { .portrait-wrap { width: 240px; height: 310px; } }
   @media (max-width: 900px) { .portrait-wrap { display: none; } }
+
+  /* === CHATBOT === */
+  .chatbot-toggle {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    padding: 14px 20px 14px 14px;
+    background: var(--grad-hot); border: none; border-radius: 999px;
+    color: var(--paper);
+    font-family: "JetBrains Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500;
+    cursor: pointer; display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--glow-pink);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .chatbot-toggle:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 18px 40px rgba(0,0,0,0.5), var(--glow-pink); }
+  .chatbot-toggle .icon {
+    width: 26px; height: 26px; background: var(--paper);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--accent-2); font-family: "Fraunces", serif; font-size: 16px;
+    font-style: italic; font-weight: 600;
+  }
+
+  .chatbot-panel {
+    position: fixed; bottom: 90px; right: 24px;
+    width: 380px; max-width: calc(100vw - 48px);
+    height: 540px; max-height: calc(100vh - 120px);
+    background: rgba(20, 24, 48, 0.92);
+    border: 1px solid var(--rule-bright); border-radius: 16px;
+    z-index: 200; display: flex; flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    opacity: 0; transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .chatbot-panel.is-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+  .chatbot-header {
+    padding: 14px 18px; border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .chatbot-header-info { display: flex; align-items: center; gap: 12px; }
+  .chatbot-header-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--grad-hot);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Fraunces", serif; font-style: italic; color: var(--paper);
+    font-size: 18px; font-weight: 500;
+    box-shadow: 0 0 16px rgba(255, 107, 157, 0.4);
+  }
+  .chatbot-header-text strong {
+    display: block; font-family: "Fraunces", serif;
+    font-size: 15px; font-weight: 500; color: var(--ink);
+  }
+  .chatbot-header-text small {
+    font-family: "JetBrains Mono", monospace; font-size: 9.5px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+    display: flex; align-items: center; gap: 6px; margin-top: 2px;
+  }
+  .chatbot-header-text small::before {
+    content: ''; display: inline-block; width: 6px; height: 6px;
+    background: var(--accent-3); border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent-3); animation: blink 1.6s infinite;
+  }
+  .chatbot-close {
+    background: none; border: 1px solid var(--rule);
+    color: var(--ink-2); width: 28px; height: 28px; border-radius: 50%;
+    cursor: pointer; font-size: 18px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .chatbot-close:hover { background: var(--rule); color: var(--ink); }
+
+  .chatbot-messages {
+    flex: 1; overflow-y: auto; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .chatbot-messages::-webkit-scrollbar { width: 5px; }
+  .chatbot-messages::-webkit-scrollbar-thumb { background: var(--rule-bright); border-radius: 4px; }
+
+  .cm-msg { display: flex; flex-direction: column; gap: 4px; max-width: 88%; animation: cm-msg-in 0.3s ease; }
+  @keyframes cm-msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .cm-msg.bot { align-self: flex-start; }
+  .cm-msg.user { align-self: flex-end; }
+  .cm-bubble {
+    padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.5;
+    white-space: pre-wrap; word-wrap: break-word;
+  }
+  .cm-msg.bot .cm-bubble {
+    background: rgba(255, 255, 255, 0.06); color: var(--ink);
+    border: 1px solid var(--rule); border-bottom-left-radius: 4px;
+  }
+  .cm-msg.user .cm-bubble {
+    background: var(--grad-hot); color: var(--paper);
+    border-bottom-right-radius: 4px; font-weight: 500;
+  }
+
+  .cm-typing .cm-bubble {
+    display: inline-flex; gap: 4px; padding: 14px 16px;
+  }
+  .cm-typing .cm-bubble span {
+    width: 6px; height: 6px; background: var(--ink-2); border-radius: 50%;
+    animation: typing-bounce 1s infinite ease-in-out;
+  }
+  .cm-typing .cm-bubble span:nth-child(2) { animation-delay: 0.15s; }
+  .cm-typing .cm-bubble span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes typing-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .chatbot-suggestions {
+    padding: 8px 14px 10px; border-top: 1px solid var(--rule);
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .cs-chip {
+    background: rgba(255, 255, 255, 0.04); border: 1px solid var(--rule-bright);
+    color: var(--ink-2); padding: 6px 12px; border-radius: 999px;
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .cs-chip:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+  .chatbot-input {
+    display: flex; padding: 12px 14px 14px; border-top: 1px solid var(--rule);
+    gap: 8px;
+  }
+  .chatbot-input input {
+    flex: 1; background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--rule-bright); color: var(--ink);
+    padding: 10px 14px; border-radius: 999px;
+    font-family: "Inter Tight", sans-serif; font-size: 14px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .chatbot-input input::placeholder { color: var(--muted); }
+  .chatbot-input input:focus { border-color: var(--accent); }
+  .chatbot-input button {
+    background: var(--grad-hot); border: none; color: var(--paper);
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    font-size: 18px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .chatbot-input button:hover { transform: scale(1.08); box-shadow: var(--glow-pink); }
+
+  @media (max-width: 600px) {
+    .chatbot-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; height: calc(100vh - 100px); }
+    .chatbot-toggle { bottom: 16px; right: 16px; padding: 12px 16px 12px 12px; }
+    .chatbot-toggle .label-text { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -1388,7 +1542,198 @@
       scene.style.transform = '';
     });
   }
+
+  // === PORTFOLIO CHATBOT ===
+  (function() {
+    const toggle = document.getElementById('chatbot-toggle');
+    const panel = document.getElementById('chatbot-panel');
+    const closeBtn = document.getElementById('chatbot-close');
+    const messages = document.getElementById('chatbot-messages');
+    const form = document.getElementById('chatbot-form');
+    const inputEl = document.getElementById('chatbot-input');
+    const suggestionsEl = document.getElementById('chatbot-suggestions');
+    if (!toggle || !panel) return;
+
+    const knowledgeBase = [
+      {
+        keywords: ['hi', 'hello', 'hey', 'greetings', 'howdy'],
+        response: "Hi there! 👋 I'm Rishapp's portfolio assistant. Ask me about his experience, skills, projects, or how to connect — or just tap a suggestion below."
+      },
+      {
+        keywords: ['about', 'who are you', "who's", 'who is', 'tell me about', 'background', 'introduce', 'yourself'],
+        response: "Rishapp Rajesh is a business analyst with 3+ years of experience across data, analytics, and business operations. He completed his M.S. in Business Analytics at UT Dallas in May 2024, and is currently the Business Operations Lead (U.S.) at VIS Global, where he built a six-workflow B2B lead-gen automation system from the ground up. Based in Dallas, TX."
+      },
+      {
+        keywords: ['current', 'vis global', 'now', 'present', 'working on'],
+        response: "Right now Rishapp is the Business Operations Lead (U.S.) at VIS Global — an enterprise tech firm with clients including Viacom and Cox. He designed and runs an end-to-end B2B lead gen system in n8n: six interconnected workflows orchestrating personalized email sequences, LinkedIn outreach via Unipile, and multi-stage funnel tracking, with AI personalization (Grok / GPT) handling copy at scale."
+      },
+      {
+        keywords: ['experience', 'work history', 'past', 'previously', 'worked at', 'companies', 'employers'],
+        response: "Three roles in his history:\n\n• VIS Global · Business Operations Lead (Jun 2025 – Present)\n• Bright Mind Enrichment & Schooling · Data Analyst (Aug 2024 – Jun 2025)\n• Goldman Sachs · Data Analyst Intern (Jun – Aug 2023)\n\nFull bullets are in the Experience section above."
+      },
+      {
+        keywords: ['skills', 'tools', 'stack', 'tech', 'languages', 'proficient', 'know'],
+        response: "Core stack: SQL (advanced), Python (pandas, scikit-learn), R, SAS, and advanced Excel for analysis. Power BI, Tableau, and Looker for dashboards. AWS, SSIS, Alteryx, and the SQL family (MySQL, SQL Server, PostgreSQL) for the data plumbing. Methods: As-Is / To-Be, gap analysis, A/B testing, cost-benefit — plus Agile delivery via Jira and Asana."
+      },
+      {
+        keywords: ['project', 'portfolio', 'github', 'examples', 'show me', 'demo'],
+        response: "Top projects:\n\n• B2B Lead Gen Automation (VIS Global) — 6-workflow n8n system\n• Tableau marketing & KPI dashboards\n• T-SQL portfolio: RFM, cohort, funnel queries\n• Power BI performance dashboards\n• Coffee-chain customer-behavior EDA\n• Predictive ML pipeline in Python\n\nFull code: github.com/Rishapp800"
+      },
+      {
+        keywords: ['education', 'school', 'university', 'degree', 'studied', 'college', 'masters', 'utd', 'ms ', 'utdallas'],
+        response: "Education:\n\n• M.S. in Business Analytics, UT Dallas (Aug 2022 – May 2024)\n• B.E. in Computer Science, Rajalakshmi Engineering College, Chennai (Jun 2018 – May 2022)"
+      },
+      {
+        keywords: ['contact', 'reach', 'connect', 'email', 'phone', 'linkedin', 'get in touch', 'message'],
+        response: "Best ways to reach Rishapp:\n\n📧 rishapp0208@gmail.com\n💼 linkedin.com/in/rishapprajesh\n💻 github.com/Rishapp800\n📍 Dallas, TX"
+      },
+      {
+        keywords: ['hire', 'open to', 'looking for', 'available', 'roles', 'hiring', 'opportunities', 'position', 'opening'],
+        response: "Rishapp is actively open to Business Analyst, Data Analyst, and Marketing Analyst roles across the U.S. — and adjacent product, ops, and strategy positions. Remote, hybrid, or onsite. Reach out at rishapp0208@gmail.com."
+      },
+      {
+        keywords: ['where', 'location', 'based', 'live', 'city', 'relocate'],
+        response: "Richardson, TX (Dallas metro). Open to relocation for the right opportunity."
+      },
+      {
+        keywords: ['why', 'strength', 'good at', 'best at', 'unique', 'differentiator', 'standout'],
+        response: "What makes Rishapp a strong hire: he's comfortable in both a stakeholder workshop and an engineering review. He owns the full BA arc — discovery → requirements → As-Is/To-Be → SQL and dashboards → leadership sign-off. Track record: built a 6-workflow lead gen system from zero at VIS Global, and delivered 10+ dashboards used by 30+ stakeholders at Bright Mind."
+      },
+      {
+        keywords: ['resume', 'cv', 'download', 'pdf'],
+        response: "Rishapp's résumé link is in the contact section (the ↓ Résumé button). If it's not loading yet, email him at rishapp0208@gmail.com — he'll send the latest copy."
+      },
+      {
+        keywords: ['thanks', 'thank you', 'thx', 'appreciate', 'great'],
+        response: "You're welcome! Anything else you'd like to know?"
+      },
+      {
+        keywords: ['bye', 'goodbye', 'see you', 'later'],
+        response: "Thanks for stopping by! Don't forget to check out the projects section or drop a note at rishapp0208@gmail.com. 👋"
+      }
+    ];
+
+    const defaultResponse = "I'm not sure about that one — but Rishapp would be glad to chat directly. Reach out at rishapp0208@gmail.com or via LinkedIn (linkedin.com/in/rishapprajesh).";
+
+    const suggestions = [
+      "What's your background?",
+      "What tools do you use?",
+      "Tell me about your work",
+      "How can we connect?"
+    ];
+
+    function findResponse(query) {
+      const q = query.toLowerCase().trim();
+      let bestResponse = null;
+      let bestScore = 0;
+      for (const item of knowledgeBase) {
+        let score = 0;
+        for (const kw of item.keywords) {
+          if (q.includes(kw)) score += kw.length;
+        }
+        if (score > bestScore) { bestScore = score; bestResponse = item.response; }
+      }
+      return bestResponse || defaultResponse;
+    }
+
+    function addMessage(text, who) {
+      const msg = document.createElement('div');
+      msg.className = 'cm-msg ' + who;
+      const bubble = document.createElement('div');
+      bubble.className = 'cm-bubble';
+      bubble.textContent = text;
+      msg.appendChild(bubble);
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function showTyping() {
+      const msg = document.createElement('div');
+      msg.className = 'cm-msg bot cm-typing';
+      msg.innerHTML = '<div class="cm-bubble"><span></span><span></span><span></span></div>';
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+      return msg;
+    }
+
+    function botRespond(text) {
+      const typing = showTyping();
+      const delay = 500 + Math.random() * 500;
+      setTimeout(() => { typing.remove(); addMessage(text, 'bot'); }, delay);
+    }
+
+    function handleUserInput(text) {
+      if (!text || !text.trim()) return;
+      addMessage(text, 'user');
+      botRespond(findResponse(text));
+    }
+
+    function renderSuggestions() {
+      suggestionsEl.innerHTML = '';
+      suggestions.forEach(s => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'cs-chip';
+        chip.textContent = s;
+        chip.addEventListener('click', () => handleUserInput(s));
+        suggestionsEl.appendChild(chip);
+      });
+    }
+
+    let isOpen = false, hasOpened = false;
+    function openPanel() {
+      isOpen = true;
+      panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+      if (!hasOpened) {
+        hasOpened = true;
+        setTimeout(() => botRespond("Hi! I'm Rishapp's portfolio assistant. Ask me anything about his experience, projects, or how to connect — or pick from the suggestions below."), 150);
+      }
+      setTimeout(() => inputEl.focus(), 350);
+    }
+    function closePanel() {
+      isOpen = false;
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+
+    toggle.addEventListener('click', () => { isOpen ? closePanel() : openPanel(); });
+    closeBtn.addEventListener('click', closePanel);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = inputEl.value;
+      inputEl.value = '';
+      handleUserInput(text);
+    });
+
+    renderSuggestions();
+  })();
 </script>
+
+<!-- Portfolio Chatbot -->
+<button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
+  <span class="icon">✦</span>
+  <span class="label-text">Ask me anything</span>
+</button>
+
+<div id="chatbot-panel" class="chatbot-panel" aria-hidden="true" role="dialog" aria-label="Portfolio chat assistant">
+  <div class="chatbot-header">
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-avatar">R</div>
+      <div class="chatbot-header-text">
+        <strong>Portfolio Assistant</strong>
+        <small>Online · Replies instantly</small>
+      </div>
+    </div>
+    <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">×</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+  <div class="chatbot-suggestions" id="chatbot-suggestions"></div>
+  <form class="chatbot-input" id="chatbot-form" autocomplete="off">
+    <input type="text" id="chatbot-input" placeholder="Ask a question..." autocomplete="off" />
+    <button type="submit" aria-label="Send">→</button>
+  </form>
+</div>
 
 </body>
 </html>
