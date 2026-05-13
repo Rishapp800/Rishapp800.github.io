@@ -938,6 +938,583 @@
     .chatbot-toggle { bottom: 16px; right: 16px; padding: 12px 16px 12px 12px; }
     .chatbot-toggle .label-text { display: none; }
   }
+
+  /* === CHATBOT INFOGRAPHIC BUBBLES === */
+  .cm-bubble.cm-rich { padding: 12px; background: rgba(255, 255, 255, 0.04); }
+  .cm-msg.bot.has-rich { max-width: 96%; }
+
+  /* Profile card */
+  .ig-profile { display: flex; flex-direction: column; gap: 10px; }
+  .ig-profile-hero { display: flex; align-items: center; gap: 12px; }
+  .ig-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--grad-hot); color: var(--paper);
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 20px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 16px rgba(255, 107, 157, 0.4); flex-shrink: 0;
+  }
+  .ig-name { font-family: "Fraunces", serif; font-size: 17px; font-weight: 500; color: var(--ink); line-height: 1.2; }
+  .ig-title {
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px;
+  }
+  .ig-intro { font-size: 13px; color: var(--ink-2); line-height: 1.5; margin: 2px 0 0; }
+  .ig-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .ig-pill {
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    padding: 4px 9px; border: 1px solid var(--rule-bright); border-radius: 999px;
+    color: var(--ink-2); background: rgba(255, 255, 255, 0.03); white-space: nowrap;
+  }
+
+  /* Timeline */
+  .ig-timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding: 4px 0; }
+  .ig-timeline::before {
+    content: ''; position: absolute; left: 5px; top: 12px; bottom: 12px;
+    width: 1px; background: var(--rule-bright);
+  }
+  .ig-tl-item { display: grid; grid-template-columns: 16px 1fr; gap: 12px; padding: 6px 0; }
+  .ig-tl-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--paper-2); border: 2px solid var(--rule-bright);
+    margin-top: 5px; position: relative; z-index: 1;
+  }
+  .ig-tl-item.active .ig-tl-dot {
+    background: var(--accent); border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .ig-tl-when {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .ig-tl-role { font-family: "Fraunces", serif; font-size: 14px; color: var(--ink); margin-top: 2px; line-height: 1.2; }
+  .ig-tl-co {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px;
+  }
+
+  /* Skills */
+  .ig-skills { display: flex; flex-direction: column; gap: 12px; }
+  .ig-skill-cat { display: flex; flex-direction: column; gap: 3px; }
+  .ig-skill-cat-label {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding-bottom: 4px; border-bottom: 1px dashed var(--rule); margin-bottom: 4px;
+  }
+  .ig-skill { display: flex; justify-content: space-between; align-items: center; padding: 2px 0; }
+  .ig-skill-name { font-family: "Fraunces", serif; font-size: 13px; color: var(--ink-2); }
+  .ig-pip-row { display: inline-flex; gap: 3px; }
+  .ig-pip { width: 6px; height: 6px; border-radius: 50%; background: var(--rule-bright); }
+  .ig-pip.on { background: var(--ink-2); }
+  .ig-pip.accent { background: var(--accent); box-shadow: 0 0 4px var(--accent); }
+
+  /* Projects */
+  .ig-projects { display: flex; flex-direction: column; gap: 6px; }
+  .ig-proj {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px;
+    padding: 10px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 8px;
+    text-decoration: none; color: inherit; transition: all 0.2s; cursor: pointer;
+  }
+  .ig-proj:hover {
+    border-color: var(--accent); background: rgba(255, 181, 71, 0.06);
+    transform: translateX(2px);
+  }
+  .ig-proj:hover .ig-proj-arrow { color: var(--accent); transform: translateX(3px); }
+  .ig-proj-title { font-family: "Fraunces", serif; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+  .ig-proj-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ig-proj-tag {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; padding: 2px 6px;
+    border: 1px solid var(--rule); border-radius: 3px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .ig-proj-arrow {
+    font-family: "Fraunces", serif; color: var(--ink-2);
+    font-size: 18px; transition: transform 0.2s, color 0.2s;
+  }
+
+  /* Contact buttons */
+  .ig-contact { display: flex; flex-direction: column; gap: 6px; }
+  .ig-contact-btn {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 12px; background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--rule-bright); border-radius: 8px;
+    text-decoration: none; color: var(--ink);
+    font-family: "JetBrains Mono", monospace; font-size: 11px;
+    letter-spacing: 0.04em; transition: all 0.2s;
+  }
+  .ig-contact-btn:hover {
+    border-color: var(--accent); background: rgba(255, 181, 71, 0.08);
+    transform: translateX(3px);
+  }
+  .ig-contact-btn.primary {
+    background: var(--grad-hot); border-color: transparent; color: var(--paper);
+  }
+  .ig-contact-btn.primary:hover { background: var(--grad-hot); box-shadow: var(--glow-pink); }
+  .ig-contact-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08); color: var(--paper);
+    font-family: "Fraunces", serif; font-size: 13px; font-weight: 500; flex-shrink: 0;
+  }
+  .ig-contact-btn.primary .ig-contact-icon { background: rgba(255, 255, 255, 0.2); }
+  .ig-contact-label { font-weight: 600; font-size: 11px; }
+  .ig-contact-handle { font-size: 9.5px; color: var(--muted); margin-top: 2px; }
+  .ig-contact-btn.primary .ig-contact-handle { color: rgba(255, 255, 255, 0.75); }
+
+  /* Status banner (open for roles) */
+  .ig-status { display: flex; flex-direction: column; gap: 10px; padding: 2px; }
+  .ig-status-header {
+    display: flex; align-items: center; gap: 8px;
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    color: var(--accent-3); text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .ig-status-dot {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--accent-3); border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-3); animation: blink 1.6s infinite;
+  }
+  .ig-role-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .ig-role-chip {
+    font-family: "JetBrains Mono", monospace; font-size: 10px;
+    padding: 5px 11px; border: 1px solid var(--rule-bright); border-radius: 999px;
+    color: var(--ink); background: rgba(255, 255, 255, 0.03);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .ig-role-chip.primary {
+    background: var(--grad-hot); border-color: transparent;
+    color: var(--paper); font-weight: 500;
+    box-shadow: 0 4px 14px rgba(255, 107, 157, 0.3);
+  }
+  .ig-status-meta { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  /* Education */
+  .ig-edu { display: flex; flex-direction: column; gap: 7px; }
+  .ig-edu-card {
+    display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center;
+    padding: 10px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 8px;
+  }
+  .ig-edu-badge {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--grad-hot); color: var(--paper);
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 13px; font-weight: 500; border-radius: 6px; height: 44px;
+  }
+  .ig-edu-school { font-family: "Fraunces", serif; font-size: 14px; color: var(--ink); line-height: 1.2; }
+  .ig-edu-degree { font-size: 11px; color: var(--ink-2); margin-top: 2px; }
+  .ig-edu-when {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--muted);
+    margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* Stat block */
+  .ig-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .ig-stat {
+    text-align: center; padding: 10px 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 8px;
+  }
+  .ig-stat-num {
+    font-family: "Fraunces", serif; font-size: 26px; font-weight: 300; line-height: 1;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+  }
+  .ig-stat-label {
+    font-family: "JetBrains Mono", monospace; font-size: 8.5px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 6px; line-height: 1.3;
+  }
+
+  /* Workflow (current role) */
+  .ig-wf-header {
+    font-family: "JetBrains Mono", monospace; font-size: 9.5px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed var(--rule);
+  }
+  .ig-workflow { display: flex; flex-direction: column; gap: 5px; }
+  .ig-wf-step {
+    display: grid; grid-template-columns: 22px 1fr; gap: 10px;
+    font-size: 12px; align-items: center;
+  }
+  .ig-wf-num {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--accent);
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 1px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255, 181, 71, 0.05);
+  }
+  .ig-wf-label { color: var(--ink-2); }
+
+  /* === INFOGRAPHIC ANIMATIONS === */
+  @keyframes ig-fade-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ig-fade-right { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes ig-pop-in { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+  @keyframes ig-rotate-cw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes ig-pulse-amber { 0%, 100% { box-shadow: 0 0 8px var(--accent), 0 0 16px rgba(255, 181, 71, 0.4); } 50% { box-shadow: 0 0 18px var(--accent), 0 0 32px var(--accent); } }
+  @keyframes ig-pulse-pink { 0%, 100% { box-shadow: 0 4px 14px rgba(255, 107, 157, 0.4); } 50% { box-shadow: 0 4px 28px rgba(255, 107, 157, 0.7); } }
+  @keyframes ig-line-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+  /* Profile card: rotating gradient ring around avatar */
+  .ig-avatar { position: relative; z-index: 1; }
+  .ig-avatar::before {
+    content: ''; position: absolute; inset: -4px;
+    background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+    border-radius: 50%; z-index: -1;
+    animation: ig-rotate-cw 4s linear infinite;
+    opacity: 0.85; filter: blur(2px);
+  }
+  .ig-pill { animation: ig-fade-up 0.4s ease backwards; transition: all 0.2s; }
+  .ig-pill:nth-child(1) { animation-delay: 0.1s; }
+  .ig-pill:nth-child(2) { animation-delay: 0.2s; }
+  .ig-pill:nth-child(3) { animation-delay: 0.3s; }
+  .ig-pill:hover {
+    border-color: var(--accent); color: var(--ink);
+    transform: translateY(-2px); background: rgba(255, 181, 71, 0.08);
+  }
+
+  /* Timeline: gradient drawing line + staggered items + glowing active dot */
+  .ig-timeline::before {
+    background: linear-gradient(to bottom, var(--accent), var(--accent-2), var(--accent-3));
+    width: 2px;
+    transform-origin: top;
+    animation: ig-line-draw 0.7s ease-out 0.2s backwards;
+  }
+  .ig-tl-item {
+    animation: ig-fade-right 0.5s ease backwards;
+    transition: transform 0.3s;
+  }
+  .ig-tl-item:nth-child(1) { animation-delay: 0.2s; }
+  .ig-tl-item:nth-child(2) { animation-delay: 0.35s; }
+  .ig-tl-item:nth-child(3) { animation-delay: 0.5s; }
+  .ig-tl-item:hover { transform: translateX(6px); }
+  .ig-tl-item:hover .ig-tl-dot {
+    background: var(--accent); border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .ig-tl-item.active .ig-tl-dot {
+    animation: ig-pulse-amber 2.5s ease-in-out infinite;
+  }
+  .ig-tl-item:hover .ig-tl-role { color: var(--accent); }
+  .ig-tl-role { transition: color 0.3s; }
+
+  /* Skills: pip pop-in + hover cascade */
+  .ig-skill {
+    animation: ig-fade-right 0.4s ease backwards;
+    transition: transform 0.3s;
+  }
+  .ig-skill-cat .ig-skill:nth-child(2) { animation-delay: 0.1s; }
+  .ig-skill-cat .ig-skill:nth-child(3) { animation-delay: 0.18s; }
+  .ig-skill-cat .ig-skill:nth-child(4) { animation-delay: 0.26s; }
+  .ig-skill:hover { transform: translateX(4px); }
+  .ig-pip { animation: ig-pop-in 0.3s ease backwards; }
+  .ig-pip-row .ig-pip:nth-child(1) { animation-delay: 0.15s; }
+  .ig-pip-row .ig-pip:nth-child(2) { animation-delay: 0.22s; }
+  .ig-pip-row .ig-pip:nth-child(3) { animation-delay: 0.29s; }
+  .ig-pip-row .ig-pip:nth-child(4) { animation-delay: 0.36s; }
+  .ig-pip-row .ig-pip:nth-child(5) { animation-delay: 0.43s; }
+  .ig-skill:hover .ig-pip.on { background: var(--accent); box-shadow: 0 0 5px var(--accent); }
+  .ig-skill:hover .ig-skill-name { color: var(--ink); }
+  .ig-skill-name { transition: color 0.3s; }
+  .ig-pip.on.accent { animation: ig-pulse-amber 2s ease-in-out infinite, ig-pop-in 0.3s ease backwards; }
+
+  /* Projects: animated gradient stripe on left edge */
+  .ig-proj {
+    animation: ig-fade-up 0.4s ease backwards;
+    overflow: hidden;
+  }
+  .ig-proj:nth-child(1) { animation-delay: 0.1s; }
+  .ig-proj:nth-child(2) { animation-delay: 0.2s; }
+  .ig-proj:nth-child(3) { animation-delay: 0.3s; }
+  .ig-proj:nth-child(4) { animation-delay: 0.4s; }
+  .ig-proj::before {
+    content: ''; position: absolute;
+    left: 0; top: 8px; bottom: 8px; width: 3px;
+    background: var(--grad-hot); border-radius: 2px;
+    transform: scaleY(0); transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .ig-proj:hover::before { transform: scaleY(1); }
+  .ig-proj:hover .ig-proj-title { color: var(--accent); }
+  .ig-proj-title { transition: color 0.3s; }
+
+  /* Contact: icon flip + button glow */
+  .ig-contact-btn {
+    animation: ig-fade-up 0.4s ease backwards;
+    overflow: hidden;
+    position: relative;
+  }
+  .ig-contact-btn:nth-child(1) { animation-delay: 0.1s; }
+  .ig-contact-btn:nth-child(2) { animation-delay: 0.22s; }
+  .ig-contact-btn:nth-child(3) { animation-delay: 0.34s; }
+  .ig-contact-icon { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .ig-contact-btn:hover .ig-contact-icon { transform: rotate(-10deg) scale(1.12); }
+  .ig-contact-btn.primary { animation: ig-fade-up 0.4s ease 0.1s backwards, ig-pulse-pink 4s ease-in-out 1s infinite; }
+
+  /* Status: chip stagger + pulsing primary */
+  .ig-status-header { animation: ig-fade-up 0.4s ease 0.05s backwards; }
+  .ig-role-chip {
+    animation: ig-fade-up 0.4s ease backwards;
+    transition: transform 0.25s, border-color 0.25s, color 0.25s;
+  }
+  .ig-role-chip:nth-child(1) { animation-delay: 0.2s; }
+  .ig-role-chip:nth-child(2) { animation-delay: 0.3s; }
+  .ig-role-chip:nth-child(3) { animation-delay: 0.4s; }
+  .ig-role-chip:hover {
+    transform: translateY(-2px); border-color: var(--accent);
+    color: var(--accent); background: rgba(255, 181, 71, 0.08);
+  }
+  .ig-role-chip.primary {
+    animation: ig-fade-up 0.4s ease 0.2s backwards, ig-pulse-pink 3s ease-in-out 0.7s infinite;
+  }
+  .ig-role-chip.primary:hover { color: var(--paper); }
+  .ig-status-meta { animation: ig-fade-up 0.4s ease 0.5s backwards; }
+
+  /* Education: shimmering badges + slide-shine on hover */
+  .ig-edu-card {
+    animation: ig-fade-up 0.4s ease backwards;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .ig-edu-card:nth-child(1) { animation-delay: 0.1s; }
+  .ig-edu-card:nth-child(2) { animation-delay: 0.25s; }
+  .ig-edu-card:hover { transform: translateX(4px); border-color: var(--accent); }
+  .ig-edu-card::after {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 181, 71, 0.2), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s ease; pointer-events: none;
+  }
+  .ig-edu-card:hover::after { left: 150%; }
+  .ig-edu-badge { position: relative; z-index: 1; }
+  .ig-edu-badge::before {
+    content: ''; position: absolute; inset: -3px;
+    background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+    z-index: -1; border-radius: 6px;
+    filter: blur(4px); opacity: 0.55;
+    animation: ig-rotate-cw 6s linear infinite;
+  }
+
+  /* Stats: bounce in + hover lift */
+  .ig-stat {
+    animation: ig-fade-up 0.4s ease backwards;
+    transition: transform 0.3s, background 0.3s, border-color 0.3s;
+  }
+  .ig-stat:nth-child(1) { animation-delay: 0.1s; }
+  .ig-stat:nth-child(2) { animation-delay: 0.25s; }
+  .ig-stat:nth-child(3) { animation-delay: 0.4s; }
+  .ig-stat:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 181, 71, 0.06);
+    border-color: var(--accent);
+  }
+  .ig-stat-num {
+    animation: ig-pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  }
+  .ig-stat:nth-child(1) .ig-stat-num { animation-delay: 0.25s; }
+  .ig-stat:nth-child(2) .ig-stat-num { animation-delay: 0.4s; }
+  .ig-stat:nth-child(3) .ig-stat-num { animation-delay: 0.55s; }
+
+  /* Workflow: sequential lighting + hover glow */
+  .ig-wf-step {
+    animation: ig-fade-right 0.4s ease backwards;
+    transition: padding-left 0.3s;
+  }
+  .ig-wf-step:nth-child(1) { animation-delay: 0.1s; }
+  .ig-wf-step:nth-child(2) { animation-delay: 0.18s; }
+  .ig-wf-step:nth-child(3) { animation-delay: 0.26s; }
+  .ig-wf-step:nth-child(4) { animation-delay: 0.34s; }
+  .ig-wf-step:nth-child(5) { animation-delay: 0.42s; }
+  .ig-wf-step:nth-child(6) { animation-delay: 0.50s; }
+  .ig-wf-step:hover { padding-left: 6px; }
+  .ig-wf-num { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .ig-wf-step:hover .ig-wf-num {
+    background: var(--accent); color: var(--paper);
+    box-shadow: 0 0 14px var(--accent);
+    transform: scale(1.15);
+    border-color: var(--accent);
+  }
+  .ig-wf-step:hover .ig-wf-label { color: var(--ink); }
+  .ig-wf-label { transition: color 0.3s; }
+
+  /* === V2 UPGRADED INFOGRAPHICS === */
+
+  /* Profile mini-stat grid */
+  .ig-profile-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 4px;
+  }
+  .ig-pstat {
+    text-align: center; padding: 8px 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 6px;
+    animation: ig-pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .ig-pstat:nth-child(1) { animation-delay: 0.15s; }
+  .ig-pstat:nth-child(2) { animation-delay: 0.25s; }
+  .ig-pstat:nth-child(3) { animation-delay: 0.35s; }
+  .ig-pstat:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .ig-pstat-num {
+    font-family: "Fraunces", serif; font-size: 18px; line-height: 1; font-weight: 400;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+  }
+  .ig-pstat-label {
+    font-family: "JetBrains Mono", monospace; font-size: 8px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px;
+  }
+
+  /* Animated skill bars (replaces pips) */
+  .ig-bar-row {
+    display: grid; grid-template-columns: 90px 1fr 28px; gap: 10px; align-items: center;
+    padding: 5px 0; animation: ig-fade-right 0.4s ease backwards;
+  }
+  .ig-skill-cat .ig-bar-row:nth-child(2) { animation-delay: 0.1s; }
+  .ig-skill-cat .ig-bar-row:nth-child(3) { animation-delay: 0.2s; }
+  .ig-skill-cat .ig-bar-row:nth-child(4) { animation-delay: 0.3s; }
+  .ig-bar-name {
+    font-family: "Fraunces", serif; font-size: 12px; color: var(--ink-2);
+    transition: color 0.3s;
+  }
+  .ig-bar-row:hover .ig-bar-name { color: var(--ink); }
+  .ig-bar-track {
+    height: 6px; background: rgba(255, 255, 255, 0.04);
+    border-radius: 3px; overflow: hidden; position: relative;
+    border: 1px solid var(--rule);
+  }
+  .ig-bar-fill {
+    height: 100%; width: var(--w);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 3px; position: relative;
+    box-shadow: 0 0 8px rgba(255, 181, 71, 0.5);
+    animation: ig-bar-grow 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  }
+  @keyframes ig-bar-grow {
+    from { width: 0; }
+    to { width: var(--w); }
+  }
+  .ig-bar-fill::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: ig-bar-shimmer 2.8s ease-in-out infinite;
+  }
+  @keyframes ig-bar-shimmer {
+    0% { transform: translateX(-100%); }
+    60%, 100% { transform: translateX(200%); }
+  }
+  .ig-bar-pct {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 600;
+    color: var(--accent); text-align: right;
+  }
+
+  /* SVG progress ring stats */
+  .ig-stats-v2 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+    padding: 4px 0;
+  }
+  .ig-rstat {
+    text-align: center; padding: 8px 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 8px;
+    animation: ig-fade-up 0.4s ease backwards;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+    position: relative;
+  }
+  .ig-rstat:nth-child(1) { animation-delay: 0.1s; }
+  .ig-rstat:nth-child(2) { animation-delay: 0.25s; }
+  .ig-rstat:nth-child(3) { animation-delay: 0.4s; }
+  .ig-rstat:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 181, 71, 0.05);
+    border-color: var(--accent);
+  }
+  .ig-ring {
+    width: 70px; height: 70px; display: block; margin: 0 auto;
+  }
+  .ig-ring-track { stroke: rgba(255, 255, 255, 0.08); }
+  .ig-ring-fill {
+    stroke: var(--accent); stroke-linecap: round;
+    filter: drop-shadow(0 0 4px var(--accent));
+    stroke-dasharray: 214;
+    animation: ig-ring-draw 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+  }
+  @keyframes ig-ring-draw {
+    from { stroke-dashoffset: 214; }
+    to { stroke-dashoffset: calc(214 * (1 - var(--pct, 0.8))); }
+  }
+  .ig-rstat-inner {
+    position: relative; margin-top: -50px;
+    height: 50px; display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .ig-rstat-num {
+    font-family: "Fraunces", serif; font-size: 20px; line-height: 1; font-weight: 400;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+  }
+  .ig-rstat-label {
+    font-family: "JetBrains Mono", monospace; font-size: 8px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; line-height: 1.3;
+  }
+
+  /* Workflow icon cards (replaces basic numbered list) */
+  .ig-workflow-v2 { display: flex; flex-direction: column; gap: 5px; }
+  .ig-wf-card {
+    display: grid; grid-template-columns: 32px 1fr 24px;
+    gap: 10px; align-items: center;
+    padding: 9px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule); border-radius: 8px;
+    animation: ig-fade-right 0.4s ease backwards;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+    cursor: default; position: relative;
+  }
+  .ig-wf-card:nth-child(1) { animation-delay: 0.05s; }
+  .ig-wf-card:nth-child(2) { animation-delay: 0.13s; }
+  .ig-wf-card:nth-child(3) { animation-delay: 0.21s; }
+  .ig-wf-card:nth-child(4) { animation-delay: 0.29s; }
+  .ig-wf-card:nth-child(5) { animation-delay: 0.37s; }
+  .ig-wf-card:nth-child(6) { animation-delay: 0.45s; }
+  .ig-wf-card:hover {
+    transform: translateX(4px);
+    background: rgba(255, 181, 71, 0.05);
+    border-color: var(--accent);
+  }
+  .ig-wf-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255, 181, 71, 0.1);
+    border: 1px solid var(--rule-bright);
+    border-radius: 8px; font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .ig-wf-card:hover .ig-wf-icon {
+    background: var(--grad-hot);
+    transform: rotate(-8deg) scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 107, 157, 0.4);
+    border-color: transparent;
+  }
+  .ig-wf-title {
+    font-family: "Fraunces", serif; font-size: 13px; color: var(--ink);
+    line-height: 1.2; transition: color 0.3s;
+  }
+  .ig-wf-card:hover .ig-wf-title { color: var(--accent); }
+  .ig-wf-tech {
+    font-family: "JetBrains Mono", monospace; font-size: 9px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px;
+  }
+  .ig-wf-num-v2 {
+    font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 600;
+    color: var(--rule-bright); text-align: right;
+    transition: color 0.3s;
+  }
+  .ig-wf-card:hover .ig-wf-num-v2 { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -1445,6 +2022,31 @@
   </div>
 </footer>
 
+<!-- Portfolio Chatbot -->
+<button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
+  <span class="icon">✦</span>
+  <span class="label-text">Ask me anything</span>
+</button>
+
+<div id="chatbot-panel" class="chatbot-panel" aria-hidden="true" role="dialog" aria-label="Portfolio chat assistant">
+  <div class="chatbot-header">
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-avatar">R</div>
+      <div class="chatbot-header-text">
+        <strong>Portfolio Assistant</strong>
+        <small>Online · Replies instantly</small>
+      </div>
+    </div>
+    <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">×</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+  <div class="chatbot-suggestions" id="chatbot-suggestions"></div>
+  <form class="chatbot-input" id="chatbot-form" autocomplete="off">
+    <input type="text" id="chatbot-input" placeholder="Ask a question..." autocomplete="off" />
+    <button type="submit" aria-label="Send">→</button>
+  </form>
+</div>
+
 <script>
   // Reveal sections on scroll
   const observer = new IntersectionObserver((entries) => {
@@ -1557,63 +2159,267 @@
     const knowledgeBase = [
       {
         keywords: ['hi', 'hello', 'hey', 'greetings', 'howdy'],
-        response: "Hi there! 👋 I'm Rishapp's portfolio assistant. Ask me about his experience, skills, projects, or how to connect — or just tap a suggestion below."
+        text: "Hi there! 👋 I'm Rishapp's portfolio assistant. Ask me anything below — or tap a suggestion."
       },
       {
         keywords: ['about', 'who are you', "who's", 'who is', 'tell me about', 'background', 'introduce', 'yourself'],
-        response: "Rishapp Rajesh is a business analyst with 3+ years of experience across data, analytics, and business operations. He completed his M.S. in Business Analytics at UT Dallas in May 2024, and is currently the Business Operations Lead (U.S.) at VIS Global, where he built a six-workflow B2B lead-gen automation system from the ground up. Based in Dallas, TX."
+        rich: `<div class="ig-profile">
+          <div class="ig-profile-hero">
+            <div class="ig-avatar">R</div>
+            <div>
+              <div class="ig-name">Rishapp Rajesh</div>
+              <div class="ig-title">Business Analyst · UT Dallas '24</div>
+            </div>
+          </div>
+          <p class="ig-intro">3+ years across data, analytics &amp; business operations. Translates ambiguous business problems into shipped, measurable outcomes.</p>
+          <div class="ig-profile-stats">
+            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="3">0</span>+</div><div class="ig-pstat-label">Yrs Exp</div></div>
+            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="3">0</span></div><div class="ig-pstat-label">Roles</div></div>
+            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="10">0</span>+</div><div class="ig-pstat-label">Tools</div></div>
+          </div>
+          <div class="ig-pills">
+            <span class="ig-pill">📍 Dallas, TX</span>
+            <span class="ig-pill">🎓 UT Dallas '24</span>
+            <span class="ig-pill">💼 VIS Global</span>
+          </div>
+        </div>`
       },
       {
         keywords: ['current', 'vis global', 'now', 'present', 'working on'],
-        response: "Right now Rishapp is the Business Operations Lead (U.S.) at VIS Global — an enterprise tech firm with clients including Viacom and Cox. He designed and runs an end-to-end B2B lead gen system in n8n: six interconnected workflows orchestrating personalized email sequences, LinkedIn outreach via Unipile, and multi-stage funnel tracking, with AI personalization (Grok / GPT) handling copy at scale."
+        rich: `<div>
+          <div class="ig-wf-header">VIS Global · 6-Workflow Lead Gen System</div>
+          <div class="ig-workflow-v2">
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">🎯</div>
+              <div><div class="ig-wf-title">Lead Sourcing</div><div class="ig-wf-tech">Apollo · Apify · SerpAPI</div></div>
+              <div class="ig-wf-num-v2">01</div>
+            </div>
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">✨</div>
+              <div><div class="ig-wf-title">AI Personalization</div><div class="ig-wf-tech">Grok · GPT</div></div>
+              <div class="ig-wf-num-v2">02</div>
+            </div>
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">✉</div>
+              <div><div class="ig-wf-title">Email Sequence</div><div class="ig-wf-tech">Intro → Warm → Breakup</div></div>
+              <div class="ig-wf-num-v2">03</div>
+            </div>
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">📥</div>
+              <div><div class="ig-wf-title">Reply Detection</div><div class="ig-wf-tech">Gmail · Bounce Mgmt</div></div>
+              <div class="ig-wf-num-v2">04</div>
+            </div>
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">💼</div>
+              <div><div class="ig-wf-title">LinkedIn Outreach</div><div class="ig-wf-tech">Unipile</div></div>
+              <div class="ig-wf-num-v2">05</div>
+            </div>
+            <div class="ig-wf-card">
+              <div class="ig-wf-icon">📊</div>
+              <div><div class="ig-wf-title">Funnel Tracking</div><div class="ig-wf-tech">NocoDB</div></div>
+              <div class="ig-wf-num-v2">06</div>
+            </div>
+          </div>
+        </div>`
       },
       {
         keywords: ['experience', 'work history', 'past', 'previously', 'worked at', 'companies', 'employers'],
-        response: "Three roles in his history:\n\n• VIS Global · Business Operations Lead (Jun 2025 – Present)\n• Bright Mind Enrichment & Schooling · Data Analyst (Aug 2024 – Jun 2025)\n• Goldman Sachs · Data Analyst Intern (Jun – Aug 2023)\n\nFull bullets are in the Experience section above."
+        rich: `<div class="ig-timeline">
+          <div class="ig-tl-item active">
+            <div class="ig-tl-dot"></div>
+            <div>
+              <div class="ig-tl-when">Jun 2025 – Present</div>
+              <div class="ig-tl-role">Business Operations Lead (U.S.)</div>
+              <div class="ig-tl-co">VIS Global</div>
+            </div>
+          </div>
+          <div class="ig-tl-item">
+            <div class="ig-tl-dot"></div>
+            <div>
+              <div class="ig-tl-when">Aug 2024 – Jun 2025</div>
+              <div class="ig-tl-role">Data Analyst</div>
+              <div class="ig-tl-co">Bright Mind Enrichment &amp; Schooling</div>
+            </div>
+          </div>
+          <div class="ig-tl-item">
+            <div class="ig-tl-dot"></div>
+            <div>
+              <div class="ig-tl-when">Jun – Aug 2023</div>
+              <div class="ig-tl-role">Data Analyst Intern</div>
+              <div class="ig-tl-co">Goldman Sachs · Dallas, TX</div>
+            </div>
+          </div>
+        </div>`
       },
       {
         keywords: ['skills', 'tools', 'stack', 'tech', 'languages', 'proficient', 'know'],
-        response: "Core stack: SQL (advanced), Python (pandas, scikit-learn), R, SAS, and advanced Excel for analysis. Power BI, Tableau, and Looker for dashboards. AWS, SSIS, Alteryx, and the SQL family (MySQL, SQL Server, PostgreSQL) for the data plumbing. Methods: As-Is / To-Be, gap analysis, A/B testing, cost-benefit — plus Agile delivery via Jira and Asana."
+        rich: `<div class="ig-skills">
+          <div class="ig-skill-cat">
+            <div class="ig-skill-cat-label">Querying &amp; Modeling</div>
+            <div class="ig-bar-row"><span class="ig-bar-name">SQL</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:95%;"></div></div><span class="ig-bar-pct">95</span></div>
+            <div class="ig-bar-row"><span class="ig-bar-name">Python</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:80%;"></div></div><span class="ig-bar-pct">80</span></div>
+            <div class="ig-bar-row"><span class="ig-bar-name">Excel · DAX</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:90%;"></div></div><span class="ig-bar-pct">90</span></div>
+          </div>
+          <div class="ig-skill-cat">
+            <div class="ig-skill-cat-label">Visualization &amp; BI</div>
+            <div class="ig-bar-row"><span class="ig-bar-name">Power BI</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:92%;"></div></div><span class="ig-bar-pct">92</span></div>
+            <div class="ig-bar-row"><span class="ig-bar-name">Tableau</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:85%;"></div></div><span class="ig-bar-pct">85</span></div>
+          </div>
+          <div class="ig-skill-cat">
+            <div class="ig-skill-cat-label">Cloud &amp; Data</div>
+            <div class="ig-bar-row"><span class="ig-bar-name">AWS · SQL</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:82%;"></div></div><span class="ig-bar-pct">82</span></div>
+            <div class="ig-bar-row"><span class="ig-bar-name">SSIS · n8n</span><div class="ig-bar-track"><div class="ig-bar-fill" style="--w:78%;"></div></div><span class="ig-bar-pct">78</span></div>
+          </div>
+        </div>`
       },
       {
         keywords: ['project', 'portfolio', 'github', 'examples', 'show me', 'demo'],
-        response: "Top projects:\n\n• B2B Lead Gen Automation (VIS Global) — 6-workflow n8n system\n• Tableau marketing & KPI dashboards\n• T-SQL portfolio: RFM, cohort, funnel queries\n• Power BI performance dashboards\n• Coffee-chain customer-behavior EDA\n• Predictive ML pipeline in Python\n\nFull code: github.com/Rishapp800"
+        rich: `<div class="ig-projects">
+          <a class="ig-proj" href="https://github.com/Rishapp800/Tableau-Dashboards" target="_blank" rel="noopener">
+            <div>
+              <div class="ig-proj-title">Tableau KPI Dashboards</div>
+              <div class="ig-proj-tags"><span class="ig-proj-tag">Tableau</span><span class="ig-proj-tag">Reporting</span></div>
+            </div>
+            <div class="ig-proj-arrow">↗</div>
+          </a>
+          <a class="ig-proj" href="https://github.com/Rishapp800/SQL-Data-Analysis-Projects" target="_blank" rel="noopener">
+            <div>
+              <div class="ig-proj-title">SQL Business Analytics</div>
+              <div class="ig-proj-tags"><span class="ig-proj-tag">T-SQL</span><span class="ig-proj-tag">Cohorts · RFM</span></div>
+            </div>
+            <div class="ig-proj-arrow">↗</div>
+          </a>
+          <a class="ig-proj" href="https://github.com/Rishapp800/PowerBI-Dashboards" target="_blank" rel="noopener">
+            <div>
+              <div class="ig-proj-title">Power BI Dashboards</div>
+              <div class="ig-proj-tags"><span class="ig-proj-tag">Power BI</span><span class="ig-proj-tag">DAX</span></div>
+            </div>
+            <div class="ig-proj-arrow">↗</div>
+          </a>
+          <a class="ig-proj" href="https://github.com/Rishapp800/" target="_blank" rel="noopener">
+            <div>
+              <div class="ig-proj-title">All projects on GitHub</div>
+              <div class="ig-proj-tags"><span class="ig-proj-tag">github.com/Rishapp800</span></div>
+            </div>
+            <div class="ig-proj-arrow">↗</div>
+          </a>
+        </div>`
       },
       {
         keywords: ['education', 'school', 'university', 'degree', 'studied', 'college', 'masters', 'utd', 'ms ', 'utdallas'],
-        response: "Education:\n\n• M.S. in Business Analytics, UT Dallas (Aug 2022 – May 2024)\n• B.E. in Computer Science, Rajalakshmi Engineering College, Chennai (Jun 2018 – May 2022)"
+        rich: `<div class="ig-edu">
+          <div class="ig-edu-card">
+            <div class="ig-edu-badge">M.S.</div>
+            <div>
+              <div class="ig-edu-school">UT Dallas</div>
+              <div class="ig-edu-degree">M.S. Business Analytics</div>
+              <div class="ig-edu-when">Aug 2022 – May 2024</div>
+            </div>
+          </div>
+          <div class="ig-edu-card">
+            <div class="ig-edu-badge">B.E.</div>
+            <div>
+              <div class="ig-edu-school">Rajalakshmi Engineering College</div>
+              <div class="ig-edu-degree">B.E. Computer Science · Chennai</div>
+              <div class="ig-edu-when">Jun 2018 – May 2022</div>
+            </div>
+          </div>
+        </div>`
       },
       {
         keywords: ['contact', 'reach', 'connect', 'email', 'phone', 'linkedin', 'get in touch', 'message'],
-        response: "Best ways to reach Rishapp:\n\n📧 rishapp0208@gmail.com\n💼 linkedin.com/in/rishapprajesh\n💻 github.com/Rishapp800\n📍 Dallas, TX"
+        rich: `<div class="ig-contact">
+          <a class="ig-contact-btn primary" href="mailto:rishapp0208@gmail.com">
+            <span class="ig-contact-icon">✉</span>
+            <div>
+              <div class="ig-contact-label">Email</div>
+              <div class="ig-contact-handle">rishapp0208@gmail.com</div>
+            </div>
+          </a>
+          <a class="ig-contact-btn" href="https://www.linkedin.com/in/rishapprajesh/" target="_blank" rel="noopener">
+            <span class="ig-contact-icon">in</span>
+            <div>
+              <div class="ig-contact-label">LinkedIn</div>
+              <div class="ig-contact-handle">in/rishapprajesh</div>
+            </div>
+          </a>
+          <a class="ig-contact-btn" href="https://github.com/Rishapp800/" target="_blank" rel="noopener">
+            <span class="ig-contact-icon">◇</span>
+            <div>
+              <div class="ig-contact-label">GitHub</div>
+              <div class="ig-contact-handle">Rishapp800</div>
+            </div>
+          </a>
+        </div>`
       },
       {
         keywords: ['hire', 'open to', 'looking for', 'available', 'roles', 'hiring', 'opportunities', 'position', 'opening'],
-        response: "Rishapp is actively open to Business Analyst, Data Analyst, and Marketing Analyst roles across the U.S. — and adjacent product, ops, and strategy positions. Remote, hybrid, or onsite. Reach out at rishapp0208@gmail.com."
+        rich: `<div class="ig-status">
+          <div class="ig-status-header">
+            <span class="ig-status-dot"></span>
+            OPEN FOR ROLES
+          </div>
+          <div class="ig-role-chips">
+            <span class="ig-role-chip primary">Business Analyst</span>
+            <span class="ig-role-chip">Data Analyst</span>
+            <span class="ig-role-chip">Marketing Analyst</span>
+          </div>
+          <div class="ig-status-meta">Across the U.S. · Remote, hybrid, or onsite · Open to relocation</div>
+        </div>`
       },
       {
         keywords: ['where', 'location', 'based', 'live', 'city', 'relocate'],
-        response: "Richardson, TX (Dallas metro). Open to relocation for the right opportunity."
+        text: "📍 Richardson, TX (Dallas metro). Open to relocation for the right opportunity."
       },
       {
         keywords: ['why', 'strength', 'good at', 'best at', 'unique', 'differentiator', 'standout'],
-        response: "What makes Rishapp a strong hire: he's comfortable in both a stakeholder workshop and an engineering review. He owns the full BA arc — discovery → requirements → As-Is/To-Be → SQL and dashboards → leadership sign-off. Track record: built a 6-workflow lead gen system from zero at VIS Global, and delivered 10+ dashboards used by 30+ stakeholders at Bright Mind."
+        rich: `<div>
+          <p class="ig-intro" style="margin-bottom:12px;">Comfortable in both stakeholder workshops AND engineering reviews. Owns the full BA arc end-to-end.</p>
+          <div class="ig-stats-v2">
+            <div class="ig-rstat">
+              <svg class="ig-ring" viewBox="0 0 80 80">
+                <circle class="ig-ring-track" cx="40" cy="40" r="34" stroke-width="3" fill="none"/>
+                <circle class="ig-ring-fill" cx="40" cy="40" r="34" stroke-width="3" fill="none" style="--pct:0.85;" transform="rotate(-90 40 40)"/>
+              </svg>
+              <div class="ig-rstat-inner"><div class="ig-rstat-num"><span class="ig-count" data-target="3">0</span>+</div></div>
+              <div class="ig-rstat-label">Years exp</div>
+            </div>
+            <div class="ig-rstat">
+              <svg class="ig-ring" viewBox="0 0 80 80">
+                <circle class="ig-ring-track" cx="40" cy="40" r="34" stroke-width="3" fill="none"/>
+                <circle class="ig-ring-fill" cx="40" cy="40" r="34" stroke-width="3" fill="none" style="--pct:1;" transform="rotate(-90 40 40)"/>
+              </svg>
+              <div class="ig-rstat-inner"><div class="ig-rstat-num"><span class="ig-count" data-target="6">0</span></div></div>
+              <div class="ig-rstat-label">Workflows</div>
+            </div>
+            <div class="ig-rstat">
+              <svg class="ig-ring" viewBox="0 0 80 80">
+                <circle class="ig-ring-track" cx="40" cy="40" r="34" stroke-width="3" fill="none"/>
+                <circle class="ig-ring-fill" cx="40" cy="40" r="34" stroke-width="3" fill="none" style="--pct:0.95;" transform="rotate(-90 40 40)"/>
+              </svg>
+              <div class="ig-rstat-inner"><div class="ig-rstat-num"><span class="ig-count" data-target="30">0</span>+</div></div>
+              <div class="ig-rstat-label">Stakeholders</div>
+            </div>
+          </div>
+        </div>`
       },
       {
         keywords: ['resume', 'cv', 'download', 'pdf'],
-        response: "Rishapp's résumé link is in the contact section (the ↓ Résumé button). If it's not loading yet, email him at rishapp0208@gmail.com — he'll send the latest copy."
+        text: "Rishapp's résumé link is in the contact section (the ↓ Résumé button). If it's not loading yet, email him at rishapp0208@gmail.com — he'll send the latest copy."
       },
       {
         keywords: ['thanks', 'thank you', 'thx', 'appreciate', 'great'],
-        response: "You're welcome! Anything else you'd like to know?"
+        text: "You're welcome! Anything else you'd like to know?"
       },
       {
         keywords: ['bye', 'goodbye', 'see you', 'later'],
-        response: "Thanks for stopping by! Don't forget to check out the projects section or drop a note at rishapp0208@gmail.com. 👋"
+        text: "Thanks for stopping by! Don't forget to check out the projects section or drop a note at rishapp0208@gmail.com. 👋"
       }
     ];
 
-    const defaultResponse = "I'm not sure about that one — but Rishapp would be glad to chat directly. Reach out at rishapp0208@gmail.com or via LinkedIn (linkedin.com/in/rishapprajesh).";
+    const defaultResponse = {
+      text: "I'm not sure about that one — but Rishapp would be glad to chat directly. Reach out at rishapp0208@gmail.com or via LinkedIn (linkedin.com/in/rishapprajesh)."
+    };
 
     const suggestions = [
       "What's your background?",
@@ -1624,24 +2430,47 @@
 
     function findResponse(query) {
       const q = query.toLowerCase().trim();
-      let bestResponse = null;
+      let bestItem = null;
       let bestScore = 0;
       for (const item of knowledgeBase) {
         let score = 0;
         for (const kw of item.keywords) {
           if (q.includes(kw)) score += kw.length;
         }
-        if (score > bestScore) { bestScore = score; bestResponse = item.response; }
+        if (score > bestScore) { bestScore = score; bestItem = item; }
       }
-      return bestResponse || defaultResponse;
+      return bestItem || defaultResponse;
     }
 
-    function addMessage(text, who) {
+    function addMessage(content, who, isRich) {
       const msg = document.createElement('div');
-      msg.className = 'cm-msg ' + who;
+      msg.className = 'cm-msg ' + who + (isRich ? ' has-rich' : '');
       const bubble = document.createElement('div');
-      bubble.className = 'cm-bubble';
-      bubble.textContent = text;
+      bubble.className = 'cm-bubble' + (isRich ? ' cm-rich' : '');
+      if (isRich) {
+        bubble.innerHTML = content;
+        // Trigger count-up animations for any .ig-count elements
+        const counters = bubble.querySelectorAll('.ig-count');
+        counters.forEach((el, i) => {
+          const target = parseInt(el.getAttribute('data-target'), 10);
+          const startDelay = 300 + i * 120;
+          setTimeout(() => {
+            const startTime = performance.now();
+            const duration = 1100;
+            const tick = (now) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target);
+              if (progress < 1) requestAnimationFrame(tick);
+              else el.textContent = target;
+            };
+            requestAnimationFrame(tick);
+          }, startDelay);
+        });
+      } else {
+        bubble.textContent = content;
+      }
       msg.appendChild(bubble);
       messages.appendChild(msg);
       messages.scrollTop = messages.scrollHeight;
@@ -1656,15 +2485,19 @@
       return msg;
     }
 
-    function botRespond(text) {
+    function botRespond(item) {
       const typing = showTyping();
       const delay = 500 + Math.random() * 500;
-      setTimeout(() => { typing.remove(); addMessage(text, 'bot'); }, delay);
+      setTimeout(() => {
+        typing.remove();
+        if (item.rich) addMessage(item.rich, 'bot', true);
+        else addMessage(item.text, 'bot', false);
+      }, delay);
     }
 
     function handleUserInput(text) {
       if (!text || !text.trim()) return;
-      addMessage(text, 'user');
+      addMessage(text, 'user', false);
       botRespond(findResponse(text));
     }
 
@@ -1687,7 +2520,7 @@
       panel.setAttribute('aria-hidden', 'false');
       if (!hasOpened) {
         hasOpened = true;
-        setTimeout(() => botRespond("Hi! I'm Rishapp's portfolio assistant. Ask me anything about his experience, projects, or how to connect — or pick from the suggestions below."), 150);
+        setTimeout(() => botRespond({ text: "Hi! I'm Rishapp's portfolio assistant. Ask me anything about his experience, projects, or how to connect — or pick from the suggestions below." }), 150);
       }
       setTimeout(() => inputEl.focus(), 350);
     }
@@ -1699,41 +2532,42 @@
 
     toggle.addEventListener('click', () => { isOpen ? closePanel() : openPanel(); });
     closeBtn.addEventListener('click', closePanel);
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+
+    function sendCurrent() {
       const text = inputEl.value;
       inputEl.value = '';
       handleUserInput(text);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      sendCurrent();
+      return false;
     });
+
+    // Defensive: also handle Enter key directly on input
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        e.stopPropagation();
+        sendCurrent();
+      }
+    });
+
+    // Defensive: also handle send button click directly
+    const sendBtn = form.querySelector('button[type="submit"]');
+    if (sendBtn) {
+      sendBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        sendCurrent();
+      });
+    }
 
     renderSuggestions();
   })();
 </script>
-
-<!-- Portfolio Chatbot -->
-<button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chat">
-  <span class="icon">✦</span>
-  <span class="label-text">Ask me anything</span>
-</button>
-
-<div id="chatbot-panel" class="chatbot-panel" aria-hidden="true" role="dialog" aria-label="Portfolio chat assistant">
-  <div class="chatbot-header">
-    <div class="chatbot-header-info">
-      <div class="chatbot-header-avatar">R</div>
-      <div class="chatbot-header-text">
-        <strong>Portfolio Assistant</strong>
-        <small>Online · Replies instantly</small>
-      </div>
-    </div>
-    <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">×</button>
-  </div>
-  <div class="chatbot-messages" id="chatbot-messages"></div>
-  <div class="chatbot-suggestions" id="chatbot-suggestions"></div>
-  <form class="chatbot-input" id="chatbot-form" autocomplete="off">
-    <input type="text" id="chatbot-input" placeholder="Ask a question..." autocomplete="off" />
-    <button type="submit" aria-label="Send">→</button>
-  </form>
-</div>
 
 </body>
 </html>
