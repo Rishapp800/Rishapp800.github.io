@@ -110,6 +110,48 @@
   .lede { font-family: "Fraunces", serif; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35; font-weight: 350; color: var(--ink-2); max-width: 540px; letter-spacing: -0.01em; }
   .lede .hl { color: var(--accent); font-style: italic; }
 
+  /* New multi-tier lede block */
+  .lede-block { display: flex; flex-direction: column; gap: 22px; max-width: 540px; }
+  .lede-hook {
+    font-family: "Fraunces", serif;
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.18; font-weight: 350; letter-spacing: -0.015em;
+    color: var(--ink); margin: 0;
+  }
+  .lede-hook em {
+    font-style: italic;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    animation: lede-grad-flow 6s ease infinite;
+  }
+  .lede-hook .grad-text {
+    font-style: italic; color: var(--accent);
+    position: relative;
+  }
+  .lede-hook .grad-text::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+    height: 1px; background: var(--accent); opacity: 0.4;
+  }
+  @keyframes lede-grad-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .lede-path {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-2); margin: 0;
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .lede-path strong { color: var(--ink); font-weight: 500; font-family: "Fraunces", serif; font-size: 14px; letter-spacing: 0; text-transform: none; font-style: italic; }
+  .lede-path .arr { color: var(--accent); font-size: 14px; font-family: "Fraunces", serif; }
+  .lede-bio { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin: 0; max-width: 480px; }
+  .lede-bio .hl { color: var(--ink); font-weight: 500; }
+  .lede-bio strong { color: var(--accent); font-weight: 500; }
+
   .roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
   .roles span {
     font-family: "JetBrains Mono", monospace; font-size: 11px;
@@ -180,6 +222,103 @@
   .about-grid p .em { color: var(--accent); font-style: italic; }
   .about-grid .col-2 p:first-of-type { margin-top: 0; }
   .about-grid .col-1 { grid-column-start: 2; }
+
+  /* === ABOUT: OPERATING PRINCIPLES === */
+  .principles {
+    display: flex; flex-direction: column;
+    margin-top: 32px; max-width: 960px;
+  }
+  .prin {
+    display: grid;
+    grid-template-columns: 130px 1fr 50px;
+    gap: 36px; align-items: center;
+    padding: 36px 28px;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    transition: padding 0.4s ease, background 0.4s;
+    cursor: default;
+  }
+  .prin:last-of-type { border-bottom: 1px solid var(--rule); }
+  .prin::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--grad-hot);
+    transform: scaleY(0); transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .prin:hover { background: rgba(255, 255, 255, 0.02); padding-left: 44px; }
+  .prin:hover::before { transform: scaleY(1); }
+  .prin-num {
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 300;
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.88; color: var(--ink);
+    letter-spacing: -0.04em;
+    transition: transform 0.4s, color 0.4s;
+    font-variation-settings: "SOFT" 50, "WONK" 1;
+  }
+  .prin:hover .prin-num {
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    transform: translateX(-6px);
+  }
+  .prin-title {
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.2; letter-spacing: -0.012em;
+    color: var(--ink); margin: 0 0 10px;
+  }
+  .prin-title .it {
+    font-style: italic; color: var(--accent);
+  }
+  .prin-desc {
+    font-family: "Fraunces", serif;
+    font-size: 16px; font-weight: 350;
+    line-height: 1.55; color: var(--ink-2);
+    margin: 0; max-width: 560px;
+    letter-spacing: -0.003em;
+  }
+  .prin-proof {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; line-height: 1.6;
+    color: var(--muted); letter-spacing: 0.02em;
+    margin: 14px 0 0; padding-left: 22px;
+    position: relative; max-width: 560px;
+    transition: color 0.3s;
+  }
+  .prin-proof::before {
+    content: '↳';
+    position: absolute; left: 0; top: 0;
+    color: var(--accent); font-size: 14px;
+    font-family: "Fraunces", serif; font-style: italic;
+    transition: text-shadow 0.3s, transform 0.3s;
+  }
+  .prin-proof strong {
+    color: var(--ink); font-weight: 500;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, rgba(255, 181, 71, 0.12) 50%, rgba(255, 181, 71, 0.12) 100%);
+    padding: 0 2px;
+  }
+  .prin:hover .prin-proof { color: var(--ink-2); }
+  .prin:hover .prin-proof::before {
+    text-shadow: 0 0 10px var(--accent);
+    transform: translateX(-2px);
+  }
+  .prin-mark {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 28px; color: var(--rule-bright);
+    text-align: right;
+    transition: color 0.3s, transform 0.3s;
+  }
+  .prin:hover .prin-mark {
+    color: var(--accent);
+    transform: translateX(10px);
+  }
+  @media (max-width: 700px) {
+    .prin { grid-template-columns: 70px 1fr; gap: 20px; padding: 26px 14px; }
+    .prin-num { font-size: 42px; }
+    .prin-mark { display: none; }
+    .prin:hover { padding-left: 28px; }
+  }
 
   .cap-grid { display: grid; grid-template-columns: 80px repeat(3, 1fr); gap: 24px; perspective: 1200px; }
   @media (max-width: 900px) { .cap-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
@@ -1523,7 +1662,7 @@
   <div class="inner">
     <div class="mark">R<span>·</span>R</div>
     <ul>
-      <li><button data-target="about">About</button></li>
+      <li><button data-target="approach">Approach</button></li>
       <li><button data-target="the-arc">The Arc</button></li>
       <li><button data-target="capabilities">Capabilities</button></li>
       <li><button data-target="toolkit">Toolkit</button></li>
@@ -1551,9 +1690,17 @@
 
     <div class="hero-grid" style="margin-top: 64px;">
       <div>
-        <p class="lede">
-          I'm <span class="hl">Rishapp Rajesh</span> — a business analyst &amp; M.S. Business Analytics candidate at UT Dallas, translating ambiguous business problems into shipped, measurable outcomes.
-        </p>
+        <div class="lede-block">
+          <p class="lede-hook">
+            <em>3+ years</em> turning <span class="grad-text">ambiguity</span> into <span class="grad-text">outcomes</span>.
+          </p>
+          <p class="lede-path">
+            <strong>Goldman Sachs</strong> <span class="arr">→</span> Bright Mind <span class="arr">→</span> <strong>VIS Global</strong>
+          </p>
+          <p class="lede-bio">
+            I'm <span class="hl">Rishapp Rajesh</span>, business analyst &amp; current <strong>Operations Lead</strong> at VIS Global — where I designed and lead end-to-end process automation.
+          </p>
+        </div>
         <div class="roles">
           <span class="primary">Business Analyst</span>
           <span>Process &amp; Operations</span>
@@ -1585,7 +1732,7 @@
             </div>
             <div class="portrait-chip c1"><span class="dot"></span>BUSINESS ANALYST</div>
             <div class="portrait-chip c2"><span class="dot"></span>SQL · PYTHON</div>
-            <div class="portrait-chip c3"><span class="dot"></span>UT DALLAS '24</div>
+            <div class="portrait-chip c3"><span class="dot"></span>VIS GLOBAL · LEAD</div>
             <div class="portrait-tag">
               <span class="name">Rishapp Rajesh</span>
               <span class="accent">DALLAS, TX</span>
@@ -1621,28 +1768,52 @@
   </div>
 </div>
 
-<section id="about">
+<section id="approach">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">01 / ABOUT</div>
-      <h2 class="sec-title">An analyst who speaks <span class="it">both languages.</span></h2>
+      <div class="sec-num">01 / APPROACH</div>
+      <h2 class="sec-title">Notes on the <span class="it">work.</span></h2>
     </div>
-    <div class="about-grid">
-      <div class="col-1">
-        <p>
-          I've spent <span class="em">3+ years</span> working at the intersection of data and the business. The thread that runs through all of it: turning ambiguous business questions into clear requirements, then turning those requirements into something measurable that ships.
-        </p>
-        <p>
-          I'm comfortable owning the full arc — <span class="em">discovery interviews with stakeholders, requirements documentation, As-Is / To-Be analysis</span>, the SQL and dashboards that prove the case, and the deck that gets sign-off from leadership.
-        </p>
+
+    <div class="principles">
+      <div class="prin">
+        <div class="prin-num">01</div>
+        <div class="prin-body">
+          <h3 class="prin-title">Start with the <span class="it">question.</span></h3>
+          <p class="prin-desc">Most "data problems" are wrong-question problems. The first hour with stakeholders is about reducing the ambiguity — not picking the chart type.</p>
+          <p class="prin-proof"><strong>VIS Global</strong> — turned an open-ended "help us find leads" brief into a structured 6-workflow outbound system across Apollo, Apify &amp; Grok.</p>
+        </div>
+        <div class="prin-mark">→</div>
       </div>
-      <div class="col-2">
-        <p>
-          Currently leading U.S. business operations at <span class="em">VIS Global</span> — designed and ran a multi-system outbound program from the ground up. Past work spans analytics for teams at <span class="em">Goldman Sachs</span>, retail customer-behavior analysis, and ML projects on messy operational data.
-        </p>
-        <p>
-          What I bring: <span class="em">commercial instinct</span>, a strong analytical toolkit, and the rare ability to sit comfortably in both a stakeholder workshop and an engineering review — <em>without losing the thread in either.</em>
-        </p>
+
+      <div class="prin">
+        <div class="prin-num">02</div>
+        <div class="prin-body">
+          <h3 class="prin-title">Ship, don't <span class="it">stare.</span></h3>
+          <p class="prin-desc">A 70% dashboard live this week beats a 95% dashboard in six. Iteration with real users compounds faster than polish in a vacuum.</p>
+          <p class="prin-proof"><strong>VIS Global</strong> — shipped v1 of the outbound system in <em>weeks, not months</em> — refined through real campaign data, not whiteboards.</p>
+        </div>
+        <div class="prin-mark">→</div>
+      </div>
+
+      <div class="prin">
+        <div class="prin-num">03</div>
+        <div class="prin-body">
+          <h3 class="prin-title">Two rooms, one <span class="it">story.</span></h3>
+          <p class="prin-desc">The deck for the CFO and the schema for engineering describe the same business. Half my job is keeping them in sync — translating without losing fidelity in either direction.</p>
+          <p class="prin-proof"><strong>Bright Mind</strong> — kept SSIS pipelines and Power BI dashboards aligned on one source of truth. 30+ stakeholders, no version drift.</p>
+        </div>
+        <div class="prin-mark">→</div>
+      </div>
+
+      <div class="prin">
+        <div class="prin-num">04</div>
+        <div class="prin-body">
+          <h3 class="prin-title">Outcomes, not <span class="it">artifacts.</span></h3>
+          <p class="prin-desc">A dashboard nobody opens isn't analytics. The work isn't done until a decision actually moves because of it — and a number gets better quarter over quarter.</p>
+          <p class="prin-proof"><strong>Goldman Sachs (Dallas)</strong> — SQL analyses across 500K+ row datasets that surfaced patterns the team could act on, not just chart.</p>
+        </div>
+        <div class="prin-mark">→</div>
       </div>
     </div>
   </div>
