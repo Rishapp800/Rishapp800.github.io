@@ -3318,6 +3318,140 @@
     }
     /* Tooltips already hidden on touch (display:none in earlier media query) */
   }
+
+  /* ================================================
+     PORTRAIT-MODE PHONE FIXES
+     - Portrait visible on phone
+     - Capabilities + tech stack grid offset reset
+     - Hard-disable cap-card stuck hover
+     ================================================ */
+  @media (max-width: 900px) {
+    /* Single/double-column grids cannot have offset items */
+    .cap-card.offset { grid-column-start: auto !important; }
+    .tool-col.offset-1 { grid-column-start: auto !important; }
+  }
+
+  @media (max-width: 640px) {
+    /* === PORTRAIT (profile photo) — visible + simplified on phone === */
+    .portrait-wrap {
+      display: block !important;
+      width: 100% !important;
+      max-width: 240px;
+      height: 290px !important;
+      margin: 32px auto 8px;
+      perspective: none;
+    }
+    .portrait-stack {
+      transform: none !important;
+      transition: none !important;
+    }
+    .portrait-glow {
+      inset: -20px !important;
+      filter: blur(20px);
+      animation: none;
+      opacity: 0.6;
+    }
+    .portrait-layer { display: none !important; }
+    .portrait-chip {
+      animation: none !important;
+      transform: none !important;
+      font-size: 8.5px !important;
+      padding: 4px 8px !important;
+    }
+    .portrait-chip.c1 { top: -10px !important; left: -8px !important; }
+    .portrait-chip.c2 { display: none !important; }
+    .portrait-chip.c3 { bottom: 28px !important; right: -12px !important; }
+    .portrait-card {
+      transform: none !important;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .portrait-card img { object-position: center 15%; }
+    .portrait-tag {
+      bottom: -10px !important; left: -8px !important;
+      padding: 8px 11px !important;
+      font-size: 8.5px !important;
+      transform: none !important;
+    }
+    .portrait-tag .name { font-size: 11px !important; }
+    .portrait-wrap:hover .portrait-card {
+      transform: none !important;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .portrait-wrap:hover .portrait-layer { transform: none !important; }
+
+    /* === CAPABILITIES — HARD reset of stuck hover (priority override) === */
+    .cap-card {
+      transform: none !important;
+      will-change: auto !important;
+    }
+    .cap-card::before {
+      display: none !important;
+      opacity: 0 !important;
+      background: none !important;
+    }
+    .cap-card:hover,
+    .cap-card:active,
+    .cap-card:focus,
+    .cap-card:focus-within {
+      border-color: var(--rule) !important;
+      box-shadow: none !important;
+      transform: none !important;
+      background: rgba(255, 255, 255, 0.025) !important;
+    }
+    .cap-card:hover::before,
+    .cap-card:active::before,
+    .cap-card:focus::before {
+      display: none !important;
+      opacity: 0 !important;
+    }
+
+    /* === TECH STACK (toolkit) — alignment fixes in single column === */
+    .tool-col {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 6px;
+    }
+    .tool-col:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .tool-col h3 {
+      font-size: 10px;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .tool-col li {
+      font-size: 15px;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+    .tool-col li .skill-bar {
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .tool-col li .lvl { font-size: 9px; margin-left: 6px; flex-shrink: 0; }
+    .tool-grid { gap: 18px; }
+
+    /* === Hide decorative SVG chips that were behind the portrait === */
+    .hero-portrait-col {
+      order: 2;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  /* === Very narrow phones (≤380px) — tighten portrait === */
+  @media (max-width: 380px) {
+    .portrait-wrap {
+      max-width: 210px;
+      height: 250px !important;
+    }
+    .tool-col li { font-size: 14px; }
+  }
 </style>
 </head>
 <body>
