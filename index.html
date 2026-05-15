@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<!-- Build: 2026-05-15-v3-mobile-portrait-fixes -->
+<!-- Build: 2026-05-15-v4-spread-bar-vertical -->
 <title>Rishapp Rajesh — Business Operations Analyst · Portfolio</title>
 <meta name="description" content="Rishapp Rajesh — Business Operations Analyst at VIS – Europe & Americas, MS Business Analytics from UT Dallas. Portfolio with case studies in SQL, Power BI, Tableau, Python, and end-to-end production automation systems." />
 <meta name="author" content="Rishapp Rajesh" />
@@ -1162,13 +1162,21 @@
     font-size: 10px; letter-spacing: 0.04em;
     transition: filter 0.25s;
     min-width: 0; overflow: hidden;
+    white-space: nowrap;
+  }
+  .exp-spread-seg > span:not(.seg-pct) {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
   }
   .exp-spread-seg:hover { filter: brightness(1.18); }
   .exp-spread-seg .seg-pct {
     font-family: "Fraunces", serif;
     font-style: italic; font-size: 12.5px;
     margin-left: 6px; opacity: 0.9;
-    flex-shrink: 0;
+    flex: 0 0 auto !important;
   }
   .exp-spread-seg.s1 { background: linear-gradient(135deg, #FFB547 0%, #FF9E2B 100%); color: #0A0B14; }
   .exp-spread-seg.s2 { background: linear-gradient(135deg, #FF8970 0%, #FF6B9D 100%); color: #fff; }
@@ -3192,25 +3200,30 @@
     .exp-company { font-size: 9.5px; }
     .exp-brief { font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
 
-    /* Function spread (VIS) */
-    .exp-spread-bar { height: 34px; }
+    /* Function spread (VIS) — stack label/% vertically on mobile so % never clips */
+    .exp-spread-bar { height: auto; min-height: 56px; }
     .exp-spread-seg {
-      padding: 0 6px;
-      font-size: 9px;
-      gap: 3px;
-      overflow: hidden;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 7px 3px !important;
+      gap: 2px !important;
+      text-align: center;
+      line-height: 1.15;
       white-space: nowrap;
     }
     .exp-spread-seg > span:not(.seg-pct) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-      flex: 1 1 auto;
+      font-size: 8.5px !important;
+      line-height: 1.15 !important;
+      flex: 0 0 auto !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 100% !important;
     }
     .exp-spread-seg .seg-pct {
-      font-size: 11px;
-      margin-left: 2px;
-      flex: 0 0 auto;
+      font-size: 13px !important;
+      margin: 0 !important;
+      opacity: 1 !important;
     }
     .exp-spread-cap { font-size: 9px; }
 
