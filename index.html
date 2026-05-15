@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<!-- Build: 2026-05-15-v3-mobile-portrait-fixes -->
 <title>Rishapp Rajesh — Business Operations Analyst · Portfolio</title>
 <meta name="description" content="Rishapp Rajesh — Business Operations Analyst at VIS – Europe & Americas, MS Business Analytics from UT Dallas. Portfolio with case studies in SQL, Power BI, Tableau, Python, and end-to-end production automation systems." />
 <meta name="author" content="Rishapp Rajesh" />
@@ -2238,7 +2242,7 @@
   .portrait-tag .name { display: block; font-size: 13px; letter-spacing: 0.04em; margin-bottom: 2px; }
 
   @media (max-width: 1100px) { .portrait-wrap { width: 240px; height: 310px; } }
-  @media (max-width: 900px) { .portrait-wrap { display: none; } }
+  @media (max-width: 900px) and (min-width: 641px) { .portrait-wrap { width: 200px; height: 250px; } }
 
   /* === CHATBOT === */
   .chatbot-toggle {
@@ -3331,6 +3335,33 @@
     .tool-col.offset-1 { grid-column-start: auto !important; }
   }
 
+  /* CRITICAL: Force flexbox layout on grids below 700px
+     This bypasses ALL grid-column issues from .offset classes */
+  @media (max-width: 700px) {
+    .cap-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 14px !important;
+    }
+    .cap-grid > .cap-card {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      grid-area: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .tool-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 22px !important;
+    }
+    .tool-grid > .tool-col {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      width: 100% !important;
+    }
+  }
+
   @media (max-width: 640px) {
     /* === PORTRAIT (profile photo) — visible + simplified on phone === */
     .portrait-wrap {
@@ -3407,34 +3438,41 @@
 
     /* === TECH STACK (toolkit) — alignment fixes in single column === */
     .tool-col {
-      padding-bottom: 14px;
+      padding: 14px 0 !important;
       border-bottom: 1px solid var(--rule);
-      margin-bottom: 6px;
+      margin-bottom: 0 !important;
     }
     .tool-col:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 0;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
     }
     .tool-col h3 {
-      font-size: 10px;
-      padding-bottom: 8px;
-      margin-bottom: 10px;
+      font-size: 10px !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 10px !important;
+    }
+    .tool-col ul {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2px;
     }
     .tool-col li {
-      font-size: 15px;
-      padding: 4px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: nowrap;
+      font-size: 14.5px !important;
+      padding: 5px 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: nowrap !important;
+      width: 100% !important;
     }
     .tool-col li .skill-bar {
-      flex-shrink: 0;
-      margin-left: auto;
+      flex-shrink: 0 !important;
+      margin-left: auto !important;
+      display: inline-flex !important;
+      gap: 3px;
     }
-    .tool-col li .lvl { font-size: 9px; margin-left: 6px; flex-shrink: 0; }
-    .tool-grid { gap: 18px; }
+    .tool-col li .lvl { font-size: 9px !important; margin-left: 6px !important; flex-shrink: 0; }
+    .tool-grid { gap: 18px !important; }
 
     /* === Hide decorative SVG chips that were behind the portrait === */
     .hero-portrait-col {
