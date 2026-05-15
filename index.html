@@ -1862,6 +1862,8 @@
     gap: 6px;
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     transform-style: preserve-3d;
+    overflow: visible;
+    padding-right: 8px;
   }
   .stat:hover .stat-num { transform: translateZ(20px) scale(1.06); }
   .stat-num .it {
@@ -1872,6 +1874,9 @@
     -webkit-background-clip: text; background-clip: text;
     color: transparent; -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.4));
+    padding-right: 4px;
+    margin-right: -4px;
+    display: inline-block;
   }
   .stat-unit {
     font-family: "Fraunces", serif;
@@ -1997,18 +2002,48 @@
   @media (max-width: 900px) {
     .arc-canvas {
       grid-template-columns: 1fr;
-      gap: 32px;
-      padding: 16px 0;
+      gap: 28px;
+      padding: 12px 0;
     }
     .arc-canvas::before { display: none; }
     .arc-node {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 20px;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
       text-align: left;
       align-items: start;
+      padding: 0;
+      position: relative;
     }
-    .arc-circle { margin: 0; }
+    .arc-node::before {
+      content: '';
+      position: absolute;
+      left: 32px; top: 64px; bottom: -28px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--rule-bright), transparent);
+      z-index: 0;
+    }
+    .arc-node:last-child::before { display: none; }
+    .arc-circle {
+      margin: 0;
+      width: 64px; height: 64px;
+      font-size: 13px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .arc-label {
+      font-size: 19px;
+      margin-bottom: 4px;
+      padding-top: 18px;
+    }
+    .arc-desc {
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+    .arc-node:hover { transform: none; }
+    .arc-node:hover .arc-circle { transform: none; }
   }
 
   /* === SKILL BARS (in toolkit) === */
