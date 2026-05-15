@@ -3193,9 +3193,25 @@
     .exp-brief { font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
 
     /* Function spread (VIS) */
-    .exp-spread-bar { height: 32px; }
-    .exp-spread-seg { padding: 0 8px; font-size: 9px; }
-    .exp-spread-seg .seg-pct { font-size: 11px; margin-left: 4px; }
+    .exp-spread-bar { height: 34px; }
+    .exp-spread-seg {
+      padding: 0 6px;
+      font-size: 9px;
+      gap: 3px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .exp-spread-seg > span:not(.seg-pct) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .exp-spread-seg .seg-pct {
+      font-size: 11px;
+      margin-left: 2px;
+      flex: 0 0 auto;
+    }
     .exp-spread-cap { font-size: 9px; }
 
     /* Wins list */
