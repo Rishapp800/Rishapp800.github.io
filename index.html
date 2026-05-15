@@ -3,8 +3,72 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rishapp Rajesh — Business Analyst Portfolio</title>
-<meta name="description" content="Rishapp Rajesh — Business Analyst & MS Business Analytics candidate at UT Dallas. Portfolio focused on requirements, process design, KPI reporting, and data-driven decision making." />
+<title>Rishapp Rajesh — Business Operations Analyst · Portfolio</title>
+<meta name="description" content="Rishapp Rajesh — Business Operations Analyst at VIS – Europe & Americas, MS Business Analytics from UT Dallas. Portfolio with case studies in SQL, Power BI, Tableau, Python, and end-to-end production automation systems." />
+<meta name="author" content="Rishapp Rajesh" />
+<meta name="theme-color" content="#0A0E1F" />
+<meta name="keywords" content="Business Analyst, Data Analyst, Marketing Analyst, Operations Analyst, Power BI, Tableau, SQL, Python, n8n, automation, portfolio, Dallas, Texas" />
+
+<!-- Canonical -->
+<link rel="canonical" href="https://rishapp800.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://rishapp800.github.io/" />
+<meta property="og:title" content="Rishapp Rajesh — Business Operations Analyst · Portfolio" />
+<meta property="og:description" content="2+ years turning ambiguity into outcomes. Currently at VIS – Europe & Americas. Open to Business / Data / Marketing / Operations Analyst roles." />
+<meta property="og:image" content="https://rishapp800.github.io/profile.jpg" />
+<meta property="og:image:alt" content="Rishapp Rajesh — portfolio" />
+<meta property="profile:first_name" content="Rishapp" />
+<meta property="profile:last_name" content="Rajesh" />
+<meta property="profile:username" content="rishapprajesh" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://rishapp800.github.io/" />
+<meta name="twitter:title" content="Rishapp Rajesh — Business Operations Analyst · Portfolio" />
+<meta name="twitter:description" content="2+ years turning ambiguity into outcomes. Currently at VIS – Europe & Americas. Open to Business / Data / Marketing / Operations Analyst roles." />
+<meta name="twitter:image" content="https://rishapp800.github.io/profile.jpg" />
+
+<!-- Favicon (SVG inline, no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E" />
+
+<!-- JSON-LD Person schema for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rishapp Rajesh",
+  "url": "https://rishapp800.github.io/",
+  "image": "https://rishapp800.github.io/profile.jpg",
+  "jobTitle": "Business Operations Analyst",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "VIS – Europe & Americas"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "The University of Texas at Dallas",
+      "sameAs": "https://www.utdallas.edu/"
+    }
+  ],
+  "email": "mailto:rishapp0208@gmail.com",
+  "telephone": "+1-469-970-9661",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Richardson",
+    "addressRegion": "TX",
+    "postalCode": "75080",
+    "addressCountry": "US"
+  },
+  "knowsAbout": ["SQL", "Power BI", "Tableau", "Python", "DAX", "n8n", "Process Automation", "Data Analysis", "Business Operations"],
+  "sameAs": [
+    "https://www.linkedin.com/in/rishapprajesh/",
+    "https://github.com/Rishapp800/"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..100,0..1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -30,7 +94,8 @@
     --grad-cool: linear-gradient(135deg, #4FD1C5 0%, #6B8AFE 100%);
   }
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  button, a { -webkit-tap-highlight-color: transparent; }
   body {
     margin: 0;
     color: var(--ink);
@@ -88,6 +153,112 @@
   nav.top .cta { border: 1px solid var(--rule-bright); padding: 7px 14px; border-radius: 999px; text-transform: uppercase; transition: all 0.3s; color: var(--ink); }
   nav.top .cta:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); box-shadow: var(--glow-amber); }
   @media (max-width: 720px) { nav.top ul { display: none; } }
+
+  /* Availability strip below hero meta-row */
+  .availability-strip {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin: 20px 0 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    padding: 9px 16px;
+    background: rgba(79, 209, 197, 0.05);
+    border: 1px solid rgba(79, 209, 197, 0.22);
+    border-radius: 4px;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .availability-dot {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: var(--accent-3); font-weight: 500;
+  }
+  .availability-dot::before {
+    content: ''; width: 7px; height: 7px;
+    border-radius: 50%; background: var(--accent-3);
+    box-shadow: 0 0 8px var(--accent-3);
+    animation: blink 1.6s infinite;
+  }
+  .availability-sep { color: var(--muted); }
+  @media (max-width: 600px) {
+    .availability-strip { font-size: 9.5px; padding: 8px 12px; gap: 8px; }
+  }
+
+  /* Resume chip tooltips */
+  .resume-chip { position: relative; }
+  .resume-chip[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--paper-3);
+    border: 1px solid var(--rule-bright);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--ink-2);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  .resume-chip[data-tip]::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--rule-bright);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+  }
+  .resume-chip:hover[data-tip]::after,
+  .resume-chip:focus[data-tip]::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .resume-chip:hover[data-tip]::before,
+  .resume-chip:focus[data-tip]::before {
+    opacity: 1;
+  }
+  @media (max-width: 600px) {
+    .resume-chip[data-tip]::after,
+    .resume-chip[data-tip]::before { display: none; }
+  }
+
+  /* "Why I'm looking" bridge quote */
+  .why-bridge-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.12em;
+    color: var(--accent-3); text-transform: uppercase;
+    margin: 0 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .why-bridge-label::before {
+    content: ''; display: inline-block;
+    width: 24px; height: 1px; background: var(--accent-3);
+  }
+  .why-bridge {
+    font-family: "Fraunces", serif;
+    font-size: 19px; font-style: italic;
+    max-width: 680px; line-height: 1.5;
+    color: var(--ink-2);
+    margin: 0 0 28px;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent-3);
+  }
+  .why-bridge strong {
+    color: var(--ink); font-weight: 500;
+    font-style: normal;
+  }
 
   header.hero { padding: 60px 0 80px; position: relative; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
@@ -394,17 +565,778 @@
   }
   @media (max-width: 600px) { .work-item > div:nth-child(3) { padding-left: 0; } }
 
+  /* === CASE STUDY CARDS === */
+  .case-list { display: flex; flex-direction: column; gap: 36px; margin-top: 32px; }
+  .case {
+    border: 1px solid var(--rule); border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.015);
+    transition: border-color 0.35s, transform 0.35s;
+  }
+  .case:hover { border-color: var(--rule-bright); transform: translateY(-2px); }
+  .case-head {
+    padding: 28px 32px 22px;
+    border-bottom: 1px dashed var(--rule);
+    position: relative;
+  }
+  .case-head::before {
+    content: ''; position: absolute;
+    left: 0; top: 18px; bottom: 18px;
+    width: 3px; background: var(--grad-hot); border-radius: 2px;
+  }
+  .case-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .case-title {
+    font-family: "Fraunces", serif;
+    font-size: clamp(24px, 2.6vw, 32px); font-weight: 400;
+    line-height: 1.15; letter-spacing: -0.015em;
+    margin: 0 0 10px; color: var(--ink);
+  }
+  .case-title .it {
+    font-style: italic; color: var(--accent);
+    font-variation-settings: "SOFT" 50, "WONK" 1;
+  }
+  .case-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .case-body { padding: 0; }
+  .case-row {
+    display: grid; grid-template-columns: 150px 1fr;
+    gap: 28px; padding: 22px 32px;
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.3s;
+  }
+  .case-row:hover { background: rgba(255, 255, 255, 0.015); }
+  .case-row:last-of-type { border-bottom: none; }
+  .case-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); padding-top: 3px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .case-label::before {
+    content: ''; display: inline-block;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 6px var(--accent);
+  }
+  .case-content {
+    font-family: "Fraunces", serif; font-size: 15.5px;
+    line-height: 1.55; color: var(--ink-2);
+    font-weight: 350; margin: 0;
+  }
+  .case-content strong {
+    color: var(--ink); font-weight: 500;
+    background: linear-gradient(120deg, transparent 0%, transparent 45%, rgba(255, 181, 71, 0.15) 45%, rgba(255, 181, 71, 0.15) 100%);
+    padding: 1px 3px;
+  }
+  .case-content em { font-style: italic; color: var(--accent); }
+  .case-content ul { margin: 0; padding-left: 18px; }
+  .case-content ul li { margin-bottom: 8px; line-height: 1.5; }
+  .case-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .case-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; color: var(--ink-2);
+    padding: 5px 11px; border: 1px solid var(--rule-bright);
+    border-radius: 999px; letter-spacing: 0.04em;
+    transition: all 0.2s; cursor: default;
+  }
+  .case-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(255, 181, 71, 0.06); }
+
+  /* "What I'd do differently" — distinct reflective treatment */
+  .case-row.case-reflection {
+    background: linear-gradient(135deg, rgba(255, 181, 71, 0.05), rgba(255, 107, 157, 0.04));
+    border-top: 1px solid rgba(255, 181, 71, 0.15);
+    border-bottom: none;
+  }
+  .case-row.case-reflection:hover { background: linear-gradient(135deg, rgba(255, 181, 71, 0.07), rgba(255, 107, 157, 0.05)); }
+  .case-row.case-reflection .case-label { color: var(--accent-2); }
+  .case-row.case-reflection .case-label::before { background: var(--accent-2); box-shadow: 0 0 6px var(--accent-2); }
+  .case-row.case-reflection .case-content { font-style: italic; color: var(--ink); }
+
+  .case-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin: 18px 32px 28px; padding: 9px 16px;
+    font-family: "JetBrains Mono", monospace; font-size: 11px;
+    color: var(--ink-2); background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--rule-bright); border-radius: 999px;
+    text-decoration: none; letter-spacing: 0.06em;
+    transition: all 0.25s;
+  }
+  .case-link:hover {
+    background: var(--accent); border-color: var(--accent);
+    color: var(--paper); transform: translateX(3px);
+    box-shadow: 0 6px 14px rgba(255, 181, 71, 0.3);
+  }
+  @media (max-width: 760px) {
+    .case-row { grid-template-columns: 1fr; gap: 10px; padding: 18px 22px; }
+    .case-head { padding: 22px 24px 18px; }
+    .case-link { margin: 12px 22px 22px; }
+  }
+
+  /* === CASE STUDY INFOGRAPHICS === */
+  .case-hero-viz {
+    margin: 22px 32px 4px;
+    padding: 22px 24px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+  }
+  .case-viz-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .case-viz-label::before {
+    content: ''; display: inline-block;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 8px var(--accent);
+    animation: blink 2s infinite;
+  }
+  .case-arch-svg {
+    width: 100%; height: auto; display: block;
+    overflow: visible;
+  }
+  .case-arch-svg .layer-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.14em;
+    fill: var(--muted);
+  }
+  .case-arch-svg .node-name {
+    font-family: "Fraunces", serif; font-size: 14px;
+    font-weight: 400; fill: var(--ink);
+  }
+  .case-arch-svg .node-name-sm {
+    font-family: "Fraunces", serif; font-size: 12px;
+    fill: var(--ink);
+  }
+  .case-arch-svg .node-desc {
+    font-family: "JetBrains Mono", monospace; font-size: 9.5px;
+    letter-spacing: 0.04em; fill: var(--muted);
+  }
+
+  /* Workflow pipeline (in Approach row) */
+  .case-pipeline {
+    margin: 12px 0 4px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+  .pipe-row {
+    display: flex; flex-wrap: wrap;
+    align-items: stretch; gap: 6px;
+    margin-bottom: 8px;
+  }
+  .pipe-row:last-child { margin-bottom: 0; }
+  .pipe-node {
+    flex: 1; min-width: 110px;
+    padding: 10px 12px;
+    background: rgba(255, 181, 71, 0.04);
+    border: 1px solid rgba(255, 181, 71, 0.25);
+    border-radius: 8px;
+    transition: all 0.25s;
+  }
+  .pipe-node:hover {
+    background: rgba(255, 181, 71, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .pipe-node.parallel {
+    background: rgba(167, 139, 250, 0.04);
+    border-color: rgba(167, 139, 250, 0.3);
+  }
+  .pipe-node.parallel:hover {
+    background: rgba(167, 139, 250, 0.1);
+    border-color: #A78BFA;
+  }
+  .pipe-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 4px;
+  }
+  .pipe-node.parallel .pipe-num { color: #A78BFA; }
+  .pipe-title {
+    font-family: "Fraunces", serif;
+    font-size: 13px; color: var(--ink);
+    line-height: 1.2;
+  }
+  .pipe-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; color: var(--muted);
+    letter-spacing: 0.04em; margin-top: 3px;
+  }
+  .pipe-arrow {
+    display: flex; align-items: center;
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 18px; color: var(--accent);
+    padding: 0 2px; line-height: 1;
+  }
+  .pipe-branch-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin: 12px 0 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .pipe-branch-label::before, .pipe-branch-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: var(--rule);
+  }
+
+  /* State machine (in Result row) */
+  .case-state {
+    margin: 14px 0 4px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+  .state-track {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 14px;
+  }
+  .state-track:last-child { margin-bottom: 0; }
+  .state-track-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .state-flow {
+    display: flex; flex-wrap: wrap;
+    align-items: center; gap: 4px;
+  }
+  .state-pill {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.06em;
+    padding: 4px 9px; border-radius: 4px;
+    border: 1px solid var(--rule-bright);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--ink-2);
+  }
+  .state-pill.start {
+    border-color: var(--accent-3);
+    color: var(--accent-3);
+    background: rgba(79, 209, 197, 0.06);
+  }
+  .state-pill.end {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(255, 181, 71, 0.08);
+    box-shadow: 0 0 8px rgba(255, 181, 71, 0.2);
+  }
+  .state-pill.branch {
+    border-color: var(--rule-bright);
+    color: var(--muted);
+    background: transparent;
+    font-style: italic;
+  }
+  .state-pill.error { color: var(--accent-2); border-color: rgba(255, 107, 157, 0.4); }
+  .state-arrow {
+    font-family: "Fraunces", serif;
+    font-size: 12px; color: var(--accent);
+    padding: 0 1px;
+  }
+  .state-branches-row {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-top: 6px; padding-left: 12px;
+    border-left: 1px dashed var(--rule);
+  }
+  .state-branches-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8px; letter-spacing: 0.1em;
+    color: var(--muted); margin-right: 4px;
+    align-self: center;
+  }
+
+  /* === DATA JOIN diagram (CASE 02 hero) === */
+  .join-diagram { display: grid; gap: 10px; }
+  .join-sources { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .join-source {
+    padding: 12px 8px;
+    background: rgba(255, 181, 71, 0.04);
+    border: 1px solid rgba(255, 181, 71, 0.25);
+    border-radius: 8px; text-align: center;
+    transition: all 0.25s;
+  }
+  .join-source:hover { background: rgba(255, 181, 71, 0.1); transform: translateY(-2px); }
+  .join-source-icon {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 4px;
+  }
+  .join-source-name { font-family: "Fraunces", serif; font-size: 13px; color: var(--ink); }
+  .join-merger {
+    text-align: center; padding: 2px 0;
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 22px; color: var(--accent); line-height: 1;
+  }
+  .join-target {
+    padding: 14px 12px;
+    background: rgba(255, 107, 157, 0.06);
+    border: 1.5px solid rgba(255, 107, 157, 0.4);
+    border-radius: 10px; text-align: center;
+  }
+  .join-target-name { font-family: "Fraunces", serif; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+  .join-target-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9.5px; color: var(--accent-2);
+    letter-spacing: 0.06em;
+  }
+  .join-outputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 4px; }
+  .join-output {
+    padding: 8px 6px;
+    background: rgba(79, 209, 197, 0.06);
+    border: 1px solid rgba(79, 209, 197, 0.3);
+    border-radius: 6px; text-align: center;
+  }
+  .join-output-icon { font-family: "JetBrains Mono", monospace; font-size: 8px; color: var(--accent-3); letter-spacing: 0.08em; }
+  .join-output-name { font-family: "Fraunces", serif; font-size: 11px; color: var(--ink); margin-top: 2px; }
+
+  /* === HEATMAP (CASE 02 result, CASE 03 result) === */
+  .hm-grid {
+    display: grid; gap: 3px;
+    grid-template-columns: 92px repeat(3, 1fr);
+  }
+  .hm-grid.cols6 { grid-template-columns: 100px repeat(6, minmax(0, 1fr)); }
+  .hm-axis {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center;
+    justify-content: flex-end;
+    padding: 6px 8px 6px 0;
+  }
+  .hm-header {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    text-align: center; padding: 4px 2px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .hm-cell {
+    padding: 10px 4px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; text-align: center;
+    transition: transform 0.2s;
+  }
+  .hm-cell:hover { transform: scale(1.05); }
+  .hm-cell.low { background: rgba(255, 255, 255, 0.03); color: var(--muted); }
+  .hm-cell.med { background: rgba(255, 181, 71, 0.18); color: var(--accent); border-color: rgba(255, 181, 71, 0.35); }
+  .hm-cell.high {
+    background: rgba(255, 181, 71, 0.6);
+    color: var(--paper); border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(255, 181, 71, 0.4);
+    font-weight: 600;
+  }
+  .hm-cell.bad { background: rgba(255, 107, 157, 0.18); color: var(--accent-2); border-color: rgba(255, 107, 157, 0.35); }
+  .hm-cell.worst {
+    background: rgba(255, 107, 157, 0.55);
+    color: var(--ink); border-color: var(--accent-2);
+    box-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+    font-weight: 600;
+  }
+  .hm-cell.good { background: rgba(79, 209, 197, 0.15); color: var(--accent-3); border-color: rgba(79, 209, 197, 0.3); }
+  .hm-callout {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.08em; color: var(--accent);
+    margin-top: 10px; padding-left: 14px;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* === NLP/PROCESS PIPELINE STAGES (CASE 03 hero) === */
+  .nlp-stages {
+    display: flex; gap: 4px;
+    align-items: stretch; flex-wrap: wrap;
+  }
+  .nlp-stage {
+    flex: 1; min-width: 120px;
+    padding: 10px 12px;
+    background: rgba(79, 209, 197, 0.04);
+    border: 1px solid rgba(79, 209, 197, 0.3);
+    border-radius: 8px;
+    transition: all 0.25s;
+  }
+  .nlp-stage:hover {
+    background: rgba(79, 209, 197, 0.1);
+    transform: translateY(-2px);
+  }
+  .nlp-stage-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; letter-spacing: 0.1em;
+    color: var(--accent-3); margin-bottom: 4px;
+  }
+  .nlp-stage-title { font-family: "Fraunces", serif; font-size: 13px; color: var(--ink); line-height: 1.2; }
+  .nlp-stage-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; color: var(--muted);
+    letter-spacing: 0.04em; margin-top: 3px;
+  }
+  .nlp-arrow {
+    display: flex; align-items: center;
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 16px; color: var(--accent-3);
+    padding: 0 2px;
+  }
+
+  /* === RISK SIGNAL BARS (CASE 04 hero/approach) === */
+  .risk-list { display: flex; flex-direction: column; gap: 7px; }
+  .risk-item {
+    display: grid; grid-template-columns: 1fr 90px 18px;
+    gap: 12px; align-items: center;
+    padding: 6px 0;
+    transition: padding-left 0.25s;
+  }
+  .risk-item:hover { padding-left: 6px; }
+  .risk-name { font-family: "Fraunces", serif; font-size: 12.5px; color: var(--ink-2); }
+  .risk-bar {
+    height: 6px; background: rgba(255, 255, 255, 0.04);
+    border-radius: 3px; overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .risk-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-3), var(--accent), var(--accent-2));
+    border-radius: 2px;
+    animation: risk-grow 1s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  @keyframes risk-grow { from { transform: scaleX(0); transform-origin: left; } }
+  .risk-icon {
+    font-family: "Fraunces", serif;
+    color: var(--muted); font-style: italic;
+    text-align: center; font-size: 14px;
+  }
+  .risk-item.star .risk-name { color: var(--ink); font-weight: 500; }
+  .risk-item.star .risk-icon {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+    font-size: 16px;
+  }
+
+  /* === BIG MULTIPLIER STAT CALLOUT (CASE 04 result) === */
+  .mult-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mult-card {
+    padding: 22px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 10px; text-align: center;
+    transition: all 0.3s;
+  }
+  .mult-card:hover {
+    border-color: var(--accent);
+    background: rgba(255, 181, 71, 0.04);
+    transform: translateY(-3px);
+  }
+  .mult-num {
+    font-family: "Fraunces", serif;
+    font-size: clamp(38px, 4.5vw, 60px);
+    font-weight: 300; line-height: 1;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .mult-num .mult-unit {
+    font-size: 0.45em; letter-spacing: 0.02em;
+    margin-left: 2px;
+  }
+  .mult-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 10px; line-height: 1.4;
+  }
+  .mult-card-sub {
+    font-family: "Fraunces", serif;
+    font-size: 11px; font-style: italic;
+    color: var(--ink-2); margin-top: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .join-sources { grid-template-columns: repeat(2, 1fr); }
+    .hm-grid { grid-template-columns: 64px repeat(3, 1fr); }
+    .hm-grid.cols6 { grid-template-columns: 64px repeat(6, minmax(0, 1fr)); }
+    .hm-cell { font-size: 8px; padding: 6px 2px; }
+    .mult-grid { grid-template-columns: 1fr; }
+    .risk-item { grid-template-columns: 1fr 60px 14px; }
+  }
+
   .exp-list { display: flex; flex-direction: column; gap: 0; }
-  .exp-item { display: grid; grid-template-columns: 80px 180px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--rule); }
+  .exp-item { display: grid; grid-template-columns: 110px 200px 1fr; gap: 28px; padding: 32px 0; border-top: 1px solid var(--rule); }
   .exp-item:last-child { border-bottom: 1px solid var(--rule); }
-  .exp-when { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
-  .exp-role { font-family: "Fraunces", serif; font-size: 22px; font-weight: 400; margin: 0 0 4px; letter-spacing: -0.01em; }
-  .exp-company { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+  .exp-when { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; line-height: 1.4; }
+  .exp-role { font-family: "Fraunces", serif; font-size: 22px; font-weight: 400; margin: 0 0 4px; letter-spacing: -0.01em; line-height: 1.15; }
+  .exp-company { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; line-height: 1.4; }
   .exp-bullets { margin: 0; padding-left: 18px; font-size: 15px; color: var(--ink-2); line-height: 1.55; }
   .exp-bullets li { padding: 2px 0; }
+
+  /* === EXPERIENCE SECTION INFOGRAPHICS === */
+  .exp-brief {
+    font-family: "Fraunces", serif;
+    font-size: 15px; font-style: italic;
+    color: var(--ink-2); line-height: 1.55;
+    margin: 0 0 18px;
+    letter-spacing: -0.005em;
+  }
+  .exp-brief strong {
+    color: var(--ink); font-weight: 500;
+    font-style: normal;
+  }
+
+  /* "Current" tag under date */
+  .exp-when-tag {
+    display: inline-block; margin-top: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8px; letter-spacing: 0.14em;
+    padding: 3px 7px 3px 16px;
+    background: rgba(79, 209, 197, 0.1);
+    color: var(--accent-3);
+    border: 1px solid rgba(79, 209, 197, 0.3);
+    border-radius: 3px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .exp-when-tag::before {
+    content: ''; position: absolute;
+    left: 6px; top: 50%; transform: translateY(-50%);
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 6px var(--accent-3);
+    animation: blink 1.6s infinite;
+  }
+
+  /* Common tool chip */
+  .exp-tools {
+    display: flex; flex-wrap: wrap;
+    gap: 5px; margin-top: 14px;
+  }
+  .tool-chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.04em;
+    padding: 4px 10px; border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--rule);
+    color: var(--ink-2);
+    transition: all 0.2s;
+  }
+  .tool-chip:hover {
+    background: rgba(255, 181, 71, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* === ROLE 1 (VIS) — Function Spread Stacked Bar === */
+  .exp-spread { margin-bottom: 18px; }
+  .exp-spread-cap {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .exp-spread-cap::before {
+    content: ''; display: inline-block;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .exp-spread-bar {
+    display: flex; height: 38px;
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .exp-spread-seg {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.04em;
+    transition: filter 0.25s;
+    min-width: 0; overflow: hidden;
+  }
+  .exp-spread-seg:hover { filter: brightness(1.18); }
+  .exp-spread-seg .seg-pct {
+    font-family: "Fraunces", serif;
+    font-style: italic; font-size: 12.5px;
+    margin-left: 6px; opacity: 0.9;
+    flex-shrink: 0;
+  }
+  .exp-spread-seg.s1 { background: linear-gradient(135deg, #FFB547 0%, #FF9E2B 100%); color: #0A0B14; }
+  .exp-spread-seg.s2 { background: linear-gradient(135deg, #FF8970 0%, #FF6B9D 100%); color: #fff; }
+  .exp-spread-seg.s3 { background: linear-gradient(135deg, #C58BFA 0%, #A78BFA 100%); color: #fff; }
+  .exp-spread-seg.s4 { background: linear-gradient(135deg, #4FD1C5 0%, #6BA1E0 100%); color: #0A0B14; }
+
+  /* Impact "wins" list */
+  .exp-wins { margin: 0 0 14px; padding: 0; list-style: none; }
+  .exp-wins li {
+    display: flex; gap: 10px;
+    padding: 5px 0;
+    font-size: 14px; color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .exp-wins .win-mark {
+    color: var(--accent);
+    font-family: "Fraunces", serif;
+    font-style: italic; font-size: 14px;
+    flex-shrink: 0; line-height: 1.5;
+  }
+  .exp-wins strong { color: var(--ink); font-weight: 500; }
+
+  /* === ROLE 2 (BRIGHT MIND) — Stat Strip === */
+  .exp-stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .stat-cell {
+    padding: 16px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-cell::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--grad-hot);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .stat-cell:hover {
+    background: rgba(255, 181, 71, 0.04);
+    border-color: rgba(255, 181, 71, 0.3);
+    transform: translateY(-2px);
+  }
+  .stat-cell:hover::before { opacity: 1; }
+  .stat-cell .stat-num {
+    font-family: "Fraunces", serif;
+    font-size: 32px; font-weight: 300;
+    line-height: 1;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .stat-cell .stat-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.06em;
+    color: var(--muted); margin-top: 10px;
+    line-height: 1.4;
+  }
+
+  /* === ROLE 3 (GOLDMAN) — Hero Asymmetric Stat === */
+  .exp-hero-stat {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hero-stat-big {
+    padding: 26px 22px;
+    background: rgba(255, 181, 71, 0.05);
+    border: 1.5px solid rgba(255, 181, 71, 0.3);
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+  }
+  .hero-num {
+    font-family: "Fraunces", serif;
+    font-size: clamp(40px, 5.2vw, 60px);
+    font-weight: 300; line-height: 1;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .hero-num-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-2);
+    margin-top: 10px; line-height: 1.4;
+  }
+  .hero-stat-side {
+    display: grid; grid-template-rows: 1fr 1fr; gap: 8px;
+  }
+  .side-stat {
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  .side-stat:hover {
+    border-color: var(--accent);
+    background: rgba(255, 181, 71, 0.04);
+  }
+  .side-num {
+    font-family: "Fraunces", serif;
+    font-size: 26px; font-weight: 300;
+    color: var(--ink); letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .side-num-rule {
+    width: 32px; height: 1px;
+    background: var(--accent); margin: 8px 0;
+  }
+  .side-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px; letter-spacing: 0.06em;
+    color: var(--muted); line-height: 1.4;
+  }
+
+  /* === ROLE 4 (WE DEFINE NET) — Skill Galaxy === */
+  .exp-galaxy {
+    display: flex; flex-direction: column;
+    gap: 0;
+    margin-bottom: 4px;
+  }
+  .galaxy-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .galaxy-row:last-child { border-bottom: none; }
+  .galaxy-cat {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.14em;
+    color: var(--accent);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .galaxy-cat::after {
+    content: '›'; font-family: "Fraunces", serif;
+    font-style: italic; font-size: 16px;
+    color: var(--accent); opacity: 0.6;
+  }
+  .galaxy-chips {
+    display: flex; flex-wrap: wrap; gap: 5px;
+  }
+
   @media (max-width: 760px) {
-    .exp-item { grid-template-columns: 1fr; gap: 12px; }
+    .exp-item { grid-template-columns: 1fr; gap: 14px; }
     .exp-when { font-size: 11px; }
+    .exp-stat-strip { grid-template-columns: 1fr 1fr; }
+    .exp-hero-stat { grid-template-columns: 1fr; }
+    .galaxy-row { grid-template-columns: 1fr; gap: 6px; padding: 8px 0; }
+    .exp-spread-seg { font-size: 9px; padding: 0 8px; }
+    .exp-spread-seg .seg-pct { font-size: 11px; }
+  }
+  @media (max-width: 760px) and (min-width: 481px) {
+    .exp-stat-strip .stat-num { font-size: 26px; }
+  }
+  @media (min-width: 761px) {
+    /* override the duplicate exp-item @media below */
   }
 
   .edu-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 48px; perspective: 1200px; }
@@ -438,6 +1370,23 @@
   .edu-card .degree { font-family: "Inter Tight", sans-serif; font-size: 15px; color: var(--ink-2); margin-bottom: 14px; }
   .edu-card .when { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
   .edu-card .focus { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .edu-honors {
+    margin-top: 18px; padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .edu-honor {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: "Fraunces", serif; font-size: 13.5px;
+    color: var(--ink-2); line-height: 1.4;
+  }
+  .edu-honor-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    padding: 3px 7px; border: 1px solid var(--accent); border-radius: 3px;
+    flex-shrink: 0; line-height: 1;
+  }
 
   section.cta-section {
     padding: 120px 0; text-align: left;
@@ -495,6 +1444,67 @@
   }
   @media (max-width: 600px) { section.cta-section .wrap { grid-template-columns: 1fr; } }
 
+  /* Role-tuned resume downloads */
+  .resume-row {
+    margin-top: 36px; padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .resume-row-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .resume-row-label::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: blink 2s infinite;
+  }
+  .resume-row-grid {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .resume-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 11px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    text-decoration: none; color: var(--ink);
+    font-family: "Inter Tight", sans-serif;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: all 0.25s;
+    backdrop-filter: blur(10px);
+  }
+  .resume-chip:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 181, 71, 0.35);
+  }
+  .resume-chip:hover .role-num { color: var(--paper); opacity: 0.7; }
+  .resume-chip:hover .download-arrow { transform: translateY(2px); color: var(--paper); }
+  .resume-chip .role-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: var(--accent); opacity: 0.85;
+    transition: color 0.25s, opacity 0.25s;
+  }
+  .resume-chip .download-arrow {
+    font-family: "Fraunces", serif;
+    font-size: 14px; color: rgba(255, 255, 255, 0.55);
+    transition: transform 0.25s, color 0.25s;
+    margin-left: 2px;
+  }
+  @media (max-width: 600px) {
+    .resume-row-grid { gap: 8px; }
+    .resume-chip { padding: 10px 14px; font-size: 12px; }
+  }
+
   footer {
     padding: 40px 0 24px;
     background: var(--paper);
@@ -511,6 +1521,312 @@
 
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.show { opacity: 1; transform: translateY(0); }
+
+  /* === FEATURED WORK BAND (between stats and approach) === */
+  .featured-work {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .featured-work::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.5;
+  }
+  .featured-work::after {
+    content: '';
+    position: absolute;
+    top: -30%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255, 181, 71, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .featured-work .wrap {
+    position: relative;
+    z-index: 1;
+  }
+  .featured-header {
+    margin-bottom: 40px;
+  }
+  .featured-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .featured-num::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--accent);
+  }
+  .featured-num .pulse-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: blink 1.6s infinite;
+  }
+  .featured-title {
+    font-family: "Fraunces", serif;
+    font-size: clamp(34px, 4.2vw, 52px);
+    font-weight: 300; letter-spacing: -0.02em;
+    margin: 0 0 8px; line-height: 1.05;
+    color: var(--ink);
+  }
+  .featured-title .it {
+    font-style: italic;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .featured-desc {
+    font-family: "Fraunces", serif;
+    font-size: 21px; font-weight: 300;
+    line-height: 1.55; color: var(--ink-2);
+    margin: 0 0 24px;
+    max-width: 540px;
+  }
+  .featured-desc strong { color: var(--ink); font-weight: 500; }
+  .featured-tech {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    margin-bottom: 28px;
+  }
+  .ft-chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px; letter-spacing: 0.04em;
+    padding: 5px 11px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    color: var(--ink-2);
+    transition: all 0.2s;
+  }
+  .ft-chip:hover {
+    background: rgba(255, 181, 71, 0.08);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .featured-cta {
+    display: inline-flex;
+    align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #FFB547 0%, #FF6B9D 100%);
+    color: var(--paper);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(255, 107, 157, 0.2);
+  }
+  .featured-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(255, 107, 157, 0.4), var(--glow-amber);
+  }
+  .ft-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .ft-stat {
+    padding: 22px 18px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .ft-stat:hover {
+    border-color: var(--accent);
+    background: rgba(255, 181, 71, 0.04);
+    transform: translateY(-2px);
+  }
+  .ft-stat-num {
+    font-family: "Fraunces", serif;
+    font-size: 46px; font-weight: 300;
+    line-height: 1;
+    background: var(--grad-hot);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .ft-stat-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9.5px; letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  @media (max-width: 900px) {
+    .featured-grid { grid-template-columns: 1fr; gap: 32px; }
+    .featured-work { padding: 60px 0; }
+  }
+  @media (max-width: 480px) {
+    .ft-stat-grid { grid-template-columns: 1fr 1fr; }
+    .ft-stat { padding: 16px 14px; }
+    .ft-stat-num { font-size: 36px; }
+  }
+
+  /* === STAGGER REVEAL for cards within sections === */
+  .case,
+  .exp-item,
+  .edu-card,
+  .capability,
+  .ft-stat,
+  .stat-cell {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .case.in-view,
+  .exp-item.in-view,
+  .edu-card.in-view,
+  .capability.in-view,
+  .ft-stat.in-view,
+  .stat-cell.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case, .exp-item, .edu-card, .capability,
+    .ft-stat, .stat-cell, .reveal,
+    .stagger-item {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  /* === PRINT STYLESHEET === */
+  @media print {
+    /* Hide interactive + decorative non-essentials */
+    nav.top,
+    .chatbot-toggle,
+    .chatbot-panel,
+    .featured-cta,
+    #back-to-top,
+    .resume-row,
+    .cta-links,
+    .availability-strip,
+    .approach-arrow,
+    button {
+      display: none !important;
+    }
+
+    /* Reset for printable surface */
+    html, body {
+      background: #fff !important;
+      color: #1a1a1a !important;
+      font-size: 10.5pt;
+      line-height: 1.4;
+    }
+    body::before, body::after { display: none !important; }
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Force visible regardless of scroll state */
+    .reveal, .case, .exp-item, .edu-card, .capability,
+    .ft-stat, .stat-cell, section {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Type colors */
+    h1, h2, h3, h4, h5, h6 { color: #0a0a0a !important; }
+    p, li, .exp-brief, .case-content { color: #2a2a2a !important; }
+    .muted, .case-label, .exp-when, .stat-label, .ft-stat-label,
+    .sec-num, .case-num, .case-meta, .exp-company {
+      color: #555 !important;
+    }
+    .accent, .it, .grad-text,
+    .featured-title .it, .bigname .it {
+      color: #c47200 !important;
+      -webkit-text-fill-color: #c47200 !important;
+      background: none !important;
+    }
+    .featured-num { color: #c47200 !important; }
+
+    /* Make backgrounds + borders printable */
+    .case, .exp-item, .edu-card, .capability,
+    .case-head, .case-body, .case-row, .case-hero-viz,
+    .ft-stat, .stat-cell, .featured-work, section,
+    .case-tag, .tool-chip, .ft-chip, .case-stack span {
+      border-color: #ccc !important;
+      background: #fff !important;
+    }
+    .case-tag, .tool-chip, .ft-chip {
+      background: #f5f5f5 !important;
+      color: #2a2a2a !important;
+      border: 1px solid #ccc !important;
+    }
+
+    /* Type sizing */
+    .bigname { font-size: 36pt !important; line-height: 1.05; }
+    .featured-title, .sec-title { font-size: 22pt !important; }
+    h3.case-title, h3.featured-title, .ft-stat-num { font-size: 16pt !important; }
+    .case-content, .exp-brief, .featured-desc, p { font-size: 10.5pt !important; }
+
+    /* Page breaks */
+    section, .featured-work { page-break-inside: avoid; break-inside: avoid; }
+    .case, .exp-item, .edu-card { page-break-inside: avoid; break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; break-after: avoid; }
+    .case + .case, .exp-item + .exp-item { page-break-before: auto; }
+
+    /* Show URLs for external links — but not for internal anchors or downloads */
+    a[href^="http"]::after,
+    a[href^="mailto:"]::after,
+    a[href^="tel:"]::after {
+      content: " (" attr(href) ")";
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8pt;
+      color: #777;
+      word-break: break-all;
+    }
+    a[href^="mailto:"]::after { content: " — " attr(href); }
+    a[href^="tel:"]::after { content: " — " attr(href); }
+    a[href^="#"]::after,
+    a[href$=".docx"]::after,
+    a[href$=".pdf"]::after { content: ""; }
+
+    /* Image handling */
+    img {
+      max-width: 100% !important;
+      page-break-inside: avoid;
+    }
+
+    /* Tighter section padding for print */
+    section, .featured-work { padding: 18px 0 !important; }
+    .wrap { max-width: 100% !important; padding: 0 24px !important; }
+  }
 
   /* === STATS STRIP === */
   .stats-strip {
@@ -1654,6 +2970,354 @@
     transition: color 0.3s;
   }
   .ig-wf-card:hover .ig-wf-num-v2 { color: var(--accent); }
+
+  /* ================================================
+     COMPREHENSIVE MOBILE POLISH
+     Addresses card overlap, infographic readability,
+     and overall spacing on phones (≤640px)
+     ================================================ */
+  @media (max-width: 640px) {
+
+    /* === Tighten container padding for more content room === */
+    .wrap { padding: 0 18px; }
+    nav.top .inner { padding: 12px 18px; }
+
+    /* === Hero typography scaled down === */
+    .bigname { font-size: clamp(48px, 14vw, 84px) !important; line-height: 0.96; }
+    .meta-row { font-size: 9.5px; gap: 10px; }
+    .lede-hook { font-size: clamp(22px, 5.5vw, 30px) !important; line-height: 1.25; }
+    .lede-path { font-size: 11px; }
+    .lede-bio { font-size: 14px; line-height: 1.55; }
+    .availability-strip { font-size: 9px; padding: 7px 11px; gap: 7px; }
+
+    /* === Section heads === */
+    .sec-num { font-size: 10px; }
+    .sec-title { font-size: clamp(28px, 7vw, 38px) !important; line-height: 1.05; }
+
+    /* === Stats strip === */
+    .stats-strip { padding: 32px 0; }
+    .stat-num { font-size: clamp(34px, 9vw, 48px) !important; }
+    .stat-label { font-size: 9px; }
+
+    /* === FEATURED WORK BAND === */
+    .featured-work { padding: 48px 0; }
+    .featured-num {
+      font-size: 9.5px; letter-spacing: 0.12em;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .featured-num::before { width: 18px; }
+    .featured-title { font-size: clamp(28px, 7.5vw, 38px) !important; line-height: 1.05; }
+    .featured-desc { font-size: 17px !important; line-height: 1.5; }
+    .featured-tech { gap: 4px; margin-bottom: 24px; }
+    .ft-chip { font-size: 9.5px; padding: 4px 9px; }
+    .featured-cta { padding: 13px 22px; font-size: 10.5px; letter-spacing: 0.08em; }
+    .ft-stat { padding: 14px 12px; }
+    .ft-stat-num { font-size: 32px !important; }
+    .ft-stat-label { font-size: 8.5px; }
+    .ft-stat-grid { gap: 8px; }
+
+    /* === APPROACH PRINCIPLES === */
+    .approach-num { font-size: 42px !important; }
+    .approach-title { font-size: 17px !important; }
+    .approach-body { font-size: 13.5px !important; }
+    .approach-proof { font-size: 11px !important; }
+
+    /* === CASE STUDIES === */
+    .case-head { padding: 18px 16px 14px; }
+    .case-num { font-size: 9px; letter-spacing: 0.08em; }
+    .case-title { font-size: 22px !important; line-height: 1.15; }
+    .case-meta { font-size: 10px; }
+    .case-row { padding: 14px 16px !important; gap: 8px !important; }
+    .case-label { font-size: 9px; letter-spacing: 0.06em; }
+    .case-content,
+    .case-content p { font-size: 13.5px !important; line-height: 1.55; }
+    .case-content li { font-size: 13px !important; }
+    .case-stack { gap: 4px; }
+    .case-tag { font-size: 9.5px; padding: 3px 8px; }
+    .case-link { margin: 10px 16px 18px; font-size: 11px; padding: 8px 12px; }
+
+    /* === ARCHITECTURE SVG: horizontally scrollable on mobile === */
+    .case-hero-viz {
+      margin: 16px 16px 4px;
+      padding: 14px 14px 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    .case-hero-viz::-webkit-scrollbar { height: 4px; }
+    .case-hero-viz::-webkit-scrollbar-thumb {
+      background: rgba(255, 181, 71, 0.4);
+      border-radius: 2px;
+    }
+    .case-arch-svg {
+      min-width: 620px;
+    }
+    .case-viz-label { font-size: 9px; letter-spacing: 0.12em; }
+
+    /* === WORKFLOW PIPELINE === */
+    .case-pipeline { padding: 12px 12px; }
+    .pipe-node { min-width: 78px; padding: 8px 9px; }
+    .pipe-num { font-size: 8px; }
+    .pipe-title { font-size: 11.5px; line-height: 1.15; }
+    .pipe-sub { font-size: 7.5px; margin-top: 2px; }
+    .pipe-arrow { font-size: 14px; padding: 0; }
+    .pipe-branch-label { font-size: 8px; letter-spacing: 0.1em; }
+
+    /* === STATE MACHINE PILLS === */
+    .case-state { padding: 12px 12px; }
+    .state-track-label { font-size: 8.5px; }
+    .state-flow { gap: 3px; }
+    .state-pill { font-size: 8.5px; padding: 3px 7px; }
+    .state-arrow { font-size: 10px; }
+    .state-branches-row { padding-left: 8px; gap: 3px; }
+    .state-branches-label { font-size: 7px; }
+
+    /* === DATA JOIN DIAGRAM === */
+    .case-insight { padding: 12px 14px; }
+    .case-insight-label { font-size: 9px; letter-spacing: 0.1em; }
+    .join-sources { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .join-source { padding: 9px 6px; }
+    .join-source-icon { font-size: 8px; }
+    .join-source-name { font-size: 11.5px; }
+    .join-target-name { font-size: 13px; }
+    .join-target-sub { font-size: 9px; }
+    .join-output-name { font-size: 10.5px; }
+    .join-merger { font-size: 18px; }
+
+    /* === HEATMAP === */
+    .hm-grid { grid-template-columns: 52px repeat(3, 1fr); gap: 2px; }
+    .hm-grid.cols6 {
+      grid-template-columns: 50px repeat(6, minmax(0, 1fr));
+      gap: 2px;
+    }
+    .hm-cell { font-size: 7.5px; padding: 5px 1px; }
+    .hm-header { font-size: 7px; padding: 3px 1px; }
+    .hm-axis { font-size: 7.5px; padding: 4px 4px 4px 0; }
+    .hm-callout { font-size: 9px; padding-left: 10px; }
+
+    /* === NLP PIPELINE STAGES === */
+    .nlp-stages { gap: 3px; }
+    .nlp-stage { min-width: 88px; padding: 8px 10px; }
+    .nlp-stage-num { font-size: 8px; }
+    .nlp-stage-title { font-size: 11.5px; line-height: 1.15; }
+    .nlp-stage-sub { font-size: 7.5px; }
+    .nlp-arrow { font-size: 13px; padding: 0; }
+
+    /* === RISK SIGNAL BARS === */
+    .risk-list { gap: 5px; }
+    .risk-item { grid-template-columns: 1fr 56px 12px !important; gap: 8px; padding: 4px 0; }
+    .risk-name { font-size: 11.5px; }
+    .risk-bar { height: 5px; }
+
+    /* === MULTIPLIER STAT CARDS === */
+    .mult-grid { grid-template-columns: 1fr; gap: 8px; }
+    .mult-card { padding: 16px 14px; }
+    .mult-num { font-size: 38px !important; }
+    .mult-label { font-size: 8.5px; }
+    .mult-card-sub { font-size: 10.5px; }
+
+    /* === EXPERIENCE ITEMS === */
+    .exp-item { padding: 24px 0 !important; gap: 12px !important; }
+    .exp-when { font-size: 11px; }
+    .exp-when-tag { font-size: 7.5px; padding: 2px 7px 2px 14px; }
+    .exp-role { font-size: 18px; line-height: 1.2; }
+    .exp-company { font-size: 9.5px; }
+    .exp-brief { font-size: 14px; line-height: 1.5; margin-bottom: 14px; }
+
+    /* Function spread (VIS) */
+    .exp-spread-bar { height: 32px; }
+    .exp-spread-seg { padding: 0 8px; font-size: 9px; }
+    .exp-spread-seg .seg-pct { font-size: 11px; margin-left: 4px; }
+    .exp-spread-cap { font-size: 9px; }
+
+    /* Wins list */
+    .exp-wins li { font-size: 12.5px; padding: 4px 0; gap: 8px; }
+
+    /* Stat strip (Bright Mind) */
+    .exp-stat-strip { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .stat-cell { padding: 12px 10px; }
+    .stat-cell .stat-num { font-size: 24px; }
+    .stat-cell .stat-label { font-size: 8.5px; margin-top: 6px; }
+
+    /* Hero asymmetric (Goldman) */
+    .exp-hero-stat { grid-template-columns: 1fr; gap: 8px; }
+    .hero-stat-big { padding: 20px 18px; }
+    .hero-num { font-size: 42px !important; }
+    .hero-num-label { font-size: 9px; }
+    .side-stat { padding: 12px 14px; }
+    .side-num { font-size: 22px; }
+    .side-label { font-size: 8.5px; }
+
+    /* Skill galaxy */
+    .galaxy-row { grid-template-columns: 1fr; gap: 5px; padding: 8px 0; }
+    .galaxy-cat { font-size: 9.5px; letter-spacing: 0.12em; }
+    .tool-chip { font-size: 9.5px; padding: 3px 9px; }
+
+    /* === EDUCATION CARDS === */
+    .edu-card { padding: 22px 18px; }
+
+    /* === CTA SECTION === */
+    section.cta-section { padding-top: 60px; padding-bottom: 40px; }
+    section.cta-section .big { font-size: clamp(38px, 11vw, 62px) !important; line-height: 0.96; }
+    .why-bridge-label { font-size: 10px; margin-bottom: 10px; }
+    .why-bridge { font-size: 15.5px; padding-left: 14px; max-width: 100%; }
+    .cta-links { gap: 8px; }
+    .cta-link { font-size: 11px; padding: 9px 14px; }
+    .resume-row-label { font-size: 9px; }
+    .resume-row-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .resume-chip { font-size: 10.5px; padding: 9px 11px; }
+
+    /* === FOOTER === */
+    footer .inner { padding: 22px 18px; font-size: 9.5px; gap: 8px; flex-wrap: wrap; }
+  }
+
+  /* === Very small screens (≤380px iPhone SE etc.) === */
+  @media (max-width: 380px) {
+    .wrap { padding: 0 14px; }
+    nav.top .inner { padding: 10px 14px; }
+
+    .bigname { font-size: clamp(40px, 15vw, 60px) !important; }
+    .featured-title { font-size: 26px !important; }
+    .sec-title { font-size: 26px !important; }
+
+    .case-head { padding: 16px 14px 12px; }
+    .case-row { padding: 12px 14px !important; }
+    .case-hero-viz { margin: 14px 14px 4px; padding: 12px 12px 10px; }
+    .case-pipeline { padding: 10px 10px; }
+    .case-state { padding: 10px 10px; }
+    .case-insight { padding: 10px 12px; }
+
+    /* Resume chips: 1 column on very small */
+    .resume-row-grid { grid-template-columns: 1fr; }
+
+    /* Stat strip: 1 column on tiny */
+    .exp-stat-strip { grid-template-columns: 1fr; gap: 5px; }
+    .ft-stat-grid { grid-template-columns: 1fr 1fr; }
+
+    .stat-num { font-size: clamp(30px, 11vw, 42px) !important; }
+
+    /* Heatmap further compressed */
+    .hm-grid { grid-template-columns: 44px repeat(3, 1fr); }
+    .hm-grid.cols6 { grid-template-columns: 44px repeat(6, minmax(0, 1fr)); }
+    .hm-cell { font-size: 6.5px; padding: 4px 1px; }
+    .hm-axis { font-size: 6.5px; }
+    .hm-header { font-size: 6.5px; }
+  }
+
+  /* ================================================
+     TOUCH-DEVICE FIX: Disable sticky hover effects
+     On touch devices (phones, tablets), :hover sticks
+     after a tap. This neutralizes that visually.
+     ================================================ */
+  @media (hover: none) {
+
+    /* CAPABILITIES — was: radial gradient + box-shadow stuck after tap */
+    .cap-card::before { display: none; }
+    .cap-card:hover {
+      border-color: var(--rule);
+      box-shadow: none;
+      transform: none;
+    }
+    .cap-card:hover::before { opacity: 0; }
+
+    /* EDUCATION cards */
+    .edu-card::after { display: none; }
+    .edu-card:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: var(--rule-bright);
+      background: rgba(255, 255, 255, 0.025);
+    }
+    .edu-card:hover::after { opacity: 0; }
+
+    /* CASE STUDY cards */
+    .case:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* EXPERIENCE STAT CELLS (Bright Mind) */
+    .stat-cell::before { display: none; }
+    .stat-cell:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.02);
+      border-color: var(--rule);
+    }
+    .stat-cell:hover::before { opacity: 0; }
+
+    /* FEATURED WORK stat cards */
+    .ft-stat:hover {
+      transform: none;
+      border-color: var(--rule);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    /* MULTIPLIER CARDS (HR case) */
+    .mult-card:hover {
+      transform: none;
+      border-color: var(--rule);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* SIDE STATS (Goldman experience) */
+    .side-stat:hover {
+      border-color: var(--rule);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* PIPE NODES — reset to base state, no transform/glow */
+    .pipe-node:hover {
+      background: rgba(255, 181, 71, 0.04);
+      border-color: rgba(255, 181, 71, 0.25);
+      transform: none;
+    }
+    .pipe-node.parallel:hover {
+      background: rgba(167, 139, 250, 0.04);
+      border-color: rgba(167, 139, 250, 0.3);
+      transform: none;
+    }
+
+    /* NLP STAGES */
+    .nlp-stage:hover {
+      background: rgba(79, 209, 197, 0.04);
+      transform: none;
+    }
+
+    /* HEATMAP CELLS — no scale on tap */
+    .hm-cell:hover { transform: none; }
+
+    /* CHIPS — keep base, no color shift */
+    .tool-chip:hover, .ft-chip:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--rule);
+      color: var(--ink-2);
+    }
+    .case-tag:hover {
+      background: rgba(255, 181, 71, 0.05);
+      border-color: rgba(255, 181, 71, 0.2);
+      color: var(--ink-2);
+    }
+
+    /* APPROACH PRINCIPLES — no lift on tap */
+    .approach-item:hover {
+      transform: none;
+      background: transparent;
+    }
+    .approach-item:hover .approach-num {
+      background: var(--grad-hot);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* RESUME CHIPS */
+    .resume-chip:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    /* Tooltips already hidden on touch (display:none in earlier media query) */
+  }
 </style>
 </head>
 <body>
@@ -1666,7 +3330,7 @@
       <li><button data-target="the-arc">The Arc</button></li>
       <li><button data-target="capabilities">Capabilities</button></li>
       <li><button data-target="toolkit">Toolkit</button></li>
-      <li><button data-target="work">Work</button></li>
+      <li><button data-target="work">Cases</button></li>
       <li><button data-target="experience">Experience</button></li>
     </ul>
     <button class="cta" data-target="contact">Get in touch ↗</button>
@@ -1692,14 +3356,21 @@
       <div>
         <div class="lede-block">
           <p class="lede-hook">
-            <em>3+ years</em> turning <span class="grad-text">ambiguity</span> into <span class="grad-text">outcomes</span>.
+            <em>2+ years</em> turning <span class="grad-text">ambiguity</span> into <span class="grad-text">outcomes</span>.
           </p>
           <p class="lede-path">
-            <strong>Goldman Sachs</strong> <span class="arr">→</span> Bright Mind <span class="arr">→</span> <strong>VIS Global</strong>
+            <strong>Goldman Sachs</strong> <span class="arr">→</span> Bright Mind <span class="arr">→</span> <strong>VIS – Europe &amp; Americas</strong>
           </p>
           <p class="lede-bio">
-            I'm <span class="hl">Rishapp Rajesh</span>, business analyst &amp; current <strong>Operations Lead</strong> at VIS Global — where I designed and lead end-to-end process automation.
+            I'm <span class="hl">Rishapp Rajesh</span> — business analyst, currently <strong>Business Operations Analyst</strong> at VIS – Europe &amp; Americas, where I run end-to-end process automation across pipeline, dashboards &amp; CRM.
           </p>
+          <div class="availability-strip">
+            <span class="availability-dot">Available</span>
+            <span class="availability-sep">·</span>
+            <span>Anywhere across the U.S.</span>
+            <span class="availability-sep">·</span>
+            <span>Open to relocation</span>
+          </div>
         </div>
         <div class="roles">
           <span class="primary">Business Analyst</span>
@@ -1732,7 +3403,7 @@
             </div>
             <div class="portrait-chip c1"><span class="dot"></span>BUSINESS ANALYST</div>
             <div class="portrait-chip c2"><span class="dot"></span>SQL · PYTHON</div>
-            <div class="portrait-chip c3"><span class="dot"></span>VIS GLOBAL · LEAD</div>
+            <div class="portrait-chip c3"><span class="dot"></span>VIS · OPS ANALYST</div>
             <div class="portrait-tag">
               <span class="name">Rishapp Rajesh</span>
               <span class="accent">DALLAS, TX</span>
@@ -1749,7 +3420,7 @@
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-num"><span class="counter" data-target="3">0</span><span class="it">+</span><span class="stat-unit">yrs</span></div>
+        <div class="stat-num"><span class="counter" data-target="2">0</span><span class="it">+</span><span class="stat-unit">yrs</span></div>
         <div class="stat-label">Across data, analytics &amp; business ops</div>
       </div>
       <div class="stat">
@@ -1767,6 +3438,61 @@
     </div>
   </div>
 </div>
+
+<!-- FEATURED WORK BAND -->
+<section class="featured-work">
+  <div class="wrap">
+    <div class="featured-header">
+      <div class="featured-num">
+        <span class="pulse-dot"></span>
+        FEATURED · CASE 01 · LIVE IN PRODUCTION
+      </div>
+      <h2 class="featured-title">VIS Global — <span class="it">end-to-end outbound system</span></h2>
+    </div>
+
+    <div class="featured-grid">
+      <div>
+        <p class="featured-desc">
+          A 6-workflow n8n automation system with AI personalization (Grok 4.1 + GPT-4 Mini), 18 tracked sequence states, and dual-channel outreach. <strong>Live in production at VIS Global</strong> — clients include Viacom and Cox.
+        </p>
+        <div class="featured-tech">
+          <span class="ft-chip">n8n</span>
+          <span class="ft-chip">NocoDB</span>
+          <span class="ft-chip">Grok 4.1</span>
+          <span class="ft-chip">GPT-4 Mini</span>
+          <span class="ft-chip">OpenRouter</span>
+          <span class="ft-chip">Apollo</span>
+          <span class="ft-chip">Apify</span>
+          <span class="ft-chip">SerpAPI</span>
+          <span class="ft-chip">Unipile</span>
+          <span class="ft-chip">Gmail API</span>
+        </div>
+        <button class="featured-cta" data-target="work">Read the full case study ↗</button>
+      </div>
+
+      <div>
+        <div class="ft-stat-grid">
+          <div class="ft-stat">
+            <div class="ft-stat-num">6</div>
+            <div class="ft-stat-label">Interconnected n8n workflows</div>
+          </div>
+          <div class="ft-stat">
+            <div class="ft-stat-num">18</div>
+            <div class="ft-stat-label">Tracked sequence + connection states</div>
+          </div>
+          <div class="ft-stat">
+            <div class="ft-stat-num">3</div>
+            <div class="ft-stat-label">Lead-source integrations layered</div>
+          </div>
+          <div class="ft-stat">
+            <div class="ft-stat-num">2</div>
+            <div class="ft-stat-label">AI models orchestrated per send</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="approach">
   <div class="wrap">
@@ -1967,116 +3693,542 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">05 / SELECTED WORK</div>
-      <h2 class="sec-title">A few <span class="it">projects</span> worth showing.</h2>
+      <div class="sec-num">05 / CASE STUDIES</div>
+      <h2 class="sec-title">Four projects, <span class="it">end to end.</span></h2>
     </div>
 
-    <div class="work-list">
+    <div class="case-list">
 
-      <a href="#" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">001</div>
-        <div>
-          <h3 class="work-title">End-to-End <span class="it">Process Automation</span></h3>
-          <div class="work-cat">BUSINESS OPS · PROCESS DESIGN · VIS GLOBAL</div>
+      <!-- CASE 01 — VIS Global Outbound System (Production) -->
+      <article class="case">
+        <header class="case-head">
+          <div class="case-num">CASE 01 · PRODUCTION SYSTEM · n8n + AI</div>
+          <h3 class="case-title">VIS Global — <span class="it">end-to-end outbound system</span></h3>
+          <div class="case-meta">n8n · NocoDB · xAI Grok · GPT-4 · Apollo · Apify · Unipile · Live in production</div>
+        </header>
+
+        <div class="case-hero-viz">
+          <div class="case-viz-label">System Architecture</div>
+          <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid meet" class="case-arch-svg">
+            <defs>
+              <marker id="arrAmb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#FFB547"/>
+              </marker>
+              <marker id="arrMint" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#4FD1C5"/>
+              </marker>
+            </defs>
+
+            <!-- LAYER 1: LEAD SOURCES -->
+            <text x="20" y="20" class="layer-tag">LEAD SOURCES</text>
+            <g>
+              <rect x="20" y="36" width="220" height="62" rx="10" fill="rgba(255,181,71,0.06)" stroke="#FFB547" stroke-width="1"/>
+              <text x="40" y="62" class="node-name">Apollo.io</text>
+              <text x="40" y="82" class="node-desc">Email verification + enrichment</text>
+            </g>
+            <g>
+              <rect x="290" y="36" width="220" height="62" rx="10" fill="rgba(255,181,71,0.06)" stroke="#FFB547" stroke-width="1"/>
+              <text x="310" y="62" class="node-name">Apify</text>
+              <text x="310" y="82" class="node-desc">LinkedIn profile scraping</text>
+            </g>
+            <g>
+              <rect x="560" y="36" width="220" height="62" rx="10" fill="rgba(255,181,71,0.06)" stroke="#FFB547" stroke-width="1"/>
+              <text x="580" y="62" class="node-name">SerpAPI</text>
+              <text x="580" y="82" class="node-desc">Google SERP intelligence</text>
+            </g>
+
+            <!-- Arrows down to core -->
+            <path d="M130 98 C 130 125, 400 125, 400 152" stroke="#FFB547" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+            <path d="M400 98 L 400 152" stroke="#FFB547" stroke-width="1.4" fill="none" stroke-dasharray="4 3" marker-end="url(#arrAmb)"/>
+            <path d="M670 98 C 670 125, 400 125, 400 152" stroke="#FFB547" stroke-width="1.4" fill="none" stroke-dasharray="4 3"/>
+
+            <!-- LAYER 2: CORE -->
+            <text x="20" y="148" class="layer-tag">CORE SYSTEM</text>
+            <g>
+              <rect x="20" y="160" width="240" height="86" rx="10" fill="rgba(255,107,157,0.08)" stroke="#FF6B9D" stroke-width="1.4"/>
+              <text x="40" y="186" class="node-name">NocoDB</text>
+              <text x="40" y="206" class="node-desc">Relational database</text>
+              <text x="40" y="222" class="node-desc">Leads + Emails tables</text>
+              <text x="40" y="238" class="node-desc">REST API · link records</text>
+            </g>
+            <g>
+              <rect x="290" y="160" width="220" height="86" rx="10" fill="rgba(255,107,157,0.14)" stroke="#FF6B9D" stroke-width="2"/>
+              <text x="310" y="186" class="node-name">n8n Workflows</text>
+              <text x="310" y="206" class="node-desc">6 interconnected flows</text>
+              <text x="310" y="222" class="node-desc">Cron + Webhook triggers</text>
+              <text x="310" y="238" class="node-desc">Cloud-hosted</text>
+            </g>
+            <g>
+              <rect x="540" y="160" width="240" height="86" rx="10" fill="rgba(167,139,250,0.08)" stroke="#A78BFA" stroke-width="1.4"/>
+              <text x="560" y="186" class="node-name">AI Personalization</text>
+              <text x="560" y="206" class="node-desc">xAI Grok 4.1 Fast · emails</text>
+              <text x="560" y="222" class="node-desc">GPT-4.1 Mini · LinkedIn DMs</text>
+              <text x="560" y="238" class="node-desc">via OpenRouter</text>
+            </g>
+
+            <!-- Inter-core arrows -->
+            <path d="M260 200 L 290 200" stroke="#FF6B9D" stroke-width="1.5" fill="none" marker-end="url(#arrAmb)"/>
+            <path d="M510 200 L 540 200" stroke="#A78BFA" stroke-width="1.5" fill="none" marker-end="url(#arrAmb)"/>
+
+            <!-- Arrows down to outputs -->
+            <path d="M400 246 L 400 282" stroke="#4FD1C5" stroke-width="1.5" fill="none" marker-end="url(#arrMint)"/>
+
+            <!-- LAYER 3: OUTPUT CHANNELS -->
+            <text x="20" y="278" class="layer-tag">OUTPUT CHANNELS</text>
+            <g>
+              <rect x="140" y="295" width="260" height="54" rx="10" fill="rgba(79,209,197,0.06)" stroke="#4FD1C5" stroke-width="1"/>
+              <text x="160" y="318" class="node-name">Gmail</text>
+              <text x="160" y="336" class="node-desc">Email send + open / bounce tracking</text>
+            </g>
+            <g>
+              <rect x="420" y="295" width="260" height="54" rx="10" fill="rgba(79,209,197,0.06)" stroke="#4FD1C5" stroke-width="1"/>
+              <text x="440" y="318" class="node-name">Unipile</text>
+              <text x="440" y="336" class="node-desc">LinkedIn connect + DM automation</text>
+            </g>
+          </svg>
         </div>
-        <div>
-          <p class="work-desc">Owned the full BA arc on VIS Global's U.S. outbound program — stakeholder discovery, process mapping, requirements documentation, then translated it into six interconnected n8n workflows: personalized email sequences, bounce / reply detection, and LinkedIn outreach via Unipile. Custom data model, multi-stage funnel tracking, and AI personalization built in.</p>
-          <div class="work-tags">
-            <span>Process design</span><span>Requirements</span><span>n8n</span><span>Funnel tracking</span><span>NocoDB · Apollo · Apify</span>
+
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-label">Problem</div>
+            <p class="case-content">VIS Global — a 20+ year enterprise tech firm with clients including <strong>Viacom and Cox</strong> — wanted to expand its U.S. and EU pipeline across four hard-to-bundle product lines (Contact Center &amp; CX, AV &amp; Collaboration, Network &amp; Security, and proprietary automation products like DiGON and RADIUS). The challenge: every prospect needs a different message depending on industry and product fit, but the team can't write 100+ unique emails a week by hand.</p>
+          </div>
+
+          <div class="case-row">
+            <div class="case-label">Approach</div>
+            <div class="case-content">
+              <p style="margin-bottom: 12px;">Built six interconnected n8n workflows — three for the email cadence, one for sequence cleanup, and two for parallel LinkedIn outreach. Each runs daily on cron triggers; the LinkedIn DM responder fires on webhook.</p>
+              <div class="case-pipeline">
+                <div class="pipe-branch-label">Email cadence</div>
+                <div class="pipe-row">
+                  <div class="pipe-node">
+                    <div class="pipe-num">W1</div>
+                    <div class="pipe-title">Email 1</div>
+                    <div class="pipe-sub">Cold intro · daily</div>
+                  </div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node">
+                    <div class="pipe-num">W2</div>
+                    <div class="pipe-title">Email 2</div>
+                    <div class="pipe-sub">Warm · 3+ days</div>
+                  </div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node">
+                    <div class="pipe-num">W3</div>
+                    <div class="pipe-title">Email 3</div>
+                    <div class="pipe-sub">Breakup · 3+ days</div>
+                  </div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node">
+                    <div class="pipe-num">W4</div>
+                    <div class="pipe-title">Mark Done</div>
+                    <div class="pipe-sub">State cleanup</div>
+                  </div>
+                </div>
+                <div class="pipe-branch-label">Parallel · LinkedIn track</div>
+                <div class="pipe-row">
+                  <div class="pipe-node parallel">
+                    <div class="pipe-num">W5</div>
+                    <div class="pipe-title">Connect Request</div>
+                    <div class="pipe-sub">via Unipile</div>
+                  </div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node parallel">
+                    <div class="pipe-num">W6</div>
+                    <div class="pipe-title">Webhook DM</div>
+                    <div class="pipe-sub">Auto-reply on accept</div>
+                  </div>
+                </div>
+              </div>
+              <ul style="margin-top: 14px;">
+                <li>Lead sourcing layered: Apollo for verified emails, Apify for LinkedIn profile signal, SerpAPI for recent news + intent triggers.</li>
+                <li>Two-table NocoDB schema (Leads + Emails) with relational linking via the link-records API — every email back-references its lead, every lead carries its full email history.</li>
+                <li>AI personalization at send time: each prompt carries the full VIS product portfolio plus the specific lead's company, role, and recent activity. Grok writes the cold email; GPT-4 handles the LinkedIn voice.</li>
+                <li>State separation: <em>sequence_status</em> for email flow, <em>connection_status</em> for LinkedIn — so a lead can be mid-email AND mid-connection without state collisions.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="case-row">
+            <div class="case-label">Stack</div>
+            <div class="case-content">
+              <div class="case-stack">
+                <span class="case-tag">n8n Cloud</span>
+                <span class="case-tag">NocoDB</span>
+                <span class="case-tag">xAI Grok 4.1 Fast</span>
+                <span class="case-tag">GPT-4.1 Mini</span>
+                <span class="case-tag">OpenRouter</span>
+                <span class="case-tag">Apollo.io</span>
+                <span class="case-tag">Apify</span>
+                <span class="case-tag">SerpAPI</span>
+                <span class="case-tag">Unipile</span>
+                <span class="case-tag">Gmail API</span>
+                <span class="case-tag">Calendly</span>
+                <span class="case-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-row">
+            <div class="case-label">Result</div>
+            <div class="case-content">
+              <p style="margin-bottom: 14px;">A live production system running daily at VIS Global. Every lead is measurable from first touch through reply, bounce, connection accept, and DM exchange. Manual outreach work became a self-running, AI-personalized program handling the entire top of funnel for U.S. operations.</p>
+              <div class="case-state">
+                <div class="state-track">
+                  <div class="state-track-label">Email flow — 11 tracked states</div>
+                  <div class="state-flow">
+                    <span class="state-pill start">empty</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">email1_sent</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">email2_sent</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">email3_sent</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill end">completed</span>
+                  </div>
+                  <div class="state-branches-row">
+                    <span class="state-branches-label">BRANCHES ·</span>
+                    <span class="state-pill branch">replied</span>
+                    <span class="state-pill branch">bounced</span>
+                    <span class="state-pill branch">soft_bounce</span>
+                    <span class="state-pill branch">blocked</span>
+                    <span class="state-pill branch">unsubscribed</span>
+                    <span class="state-pill branch error">error</span>
+                  </div>
+                </div>
+                <div class="state-track">
+                  <div class="state-track-label">LinkedIn flow — 7 tracked states</div>
+                  <div class="state-flow">
+                    <span class="state-pill start">not_sent</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">pending</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">accepted</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill">dm_sent</span>
+                    <span class="state-arrow">→</span>
+                    <span class="state-pill end">dm_replied</span>
+                  </div>
+                </div>
+              </div>
+              <p style="margin-top: 14px;">Because every state transition is logged, campaign performance is decomposable: which emails open, which subjects bounce, which roles warm faster on LinkedIn vs. email. <strong>Each iteration sharpens the next</strong>.</p>
+            </div>
+          </div>
+
+          <div class="case-row case-reflection">
+            <div class="case-label">What I'd Do Differently</div>
+            <p class="case-content">Replace Apollo lead sourcing with a custom scraper on LinkedIn Sales Navigator + Clearbit — Apollo's data freshness was inconsistent and credit costs added up. Move AI personalization from per-lead <em>inline</em> calls to a <em>batch generation queue</em> running off-peak — would cut OpenRouter token costs by ~60% and let me A/B test prompt variants in parallel. Finally, layer a <em>campaign-level dashboard</em> in Power BI or Tableau over NocoDB — right now sequence health is visible per-lead but hard to read at the campaign level. Open question I'm still working on: what's the right "send rate vs. deliverability" curve at scale.</p>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
-
-      <a href="https://github.com/Rishapp800/Tableau-Dashboards" target="_blank" rel="noopener" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">002</div>
-        <div>
-          <h3 class="work-title">Executive KPI <span class="it">Dashboards</span></h3>
-          <div class="work-cat">TABLEAU · EXECUTIVE REPORTING</div>
+        <div style="display:flex; gap:8px; margin: 18px 32px 28px; flex-wrap:wrap;">
+          <a class="case-link" href="mailto:rishapp0208@gmail.com?subject=VIS%20Outbound%20System%20-%20Architecture%20Walkthrough" style="margin:0;">Request architecture walkthrough ↗</a>
         </div>
-        <div>
-          <p class="work-desc">Interactive Tableau dashboards covering sales, customer, and operational KPIs — designed so business leaders can answer "how are we doing?" in one glance, and drill into the <em>why</em> when they need to defend or change a decision.</p>
-          <div class="work-tags">
-            <span>Tableau</span><span>KPI design</span><span>Executive reporting</span><span>Self-service drill-down</span>
+      </article>
+
+      <!-- CASE 02 — Retail Coffee Chain (SQL) -->
+      <article class="case">
+        <header class="case-head">
+          <div class="case-num">CASE 02 · SQL · RETAIL ANALYTICS</div>
+          <h3 class="case-title">Retail Coffee Chain — <span class="it">customer behavior</span></h3>
+          <div class="case-meta">T-SQL · MSSQL · Window Functions · CTEs · Indie Project</div>
+        </header>
+
+        <div class="case-hero-viz">
+          <div class="case-viz-label">From 4 disconnected exports to 3 actionable KPIs</div>
+          <div class="join-diagram">
+            <div class="join-sources">
+              <div class="join-source"><div class="join-source-icon">CSV · 01</div><div class="join-source-name">Transactions</div></div>
+              <div class="join-source"><div class="join-source-icon">CSV · 02</div><div class="join-source-name">Products</div></div>
+              <div class="join-source"><div class="join-source-icon">CSV · 03</div><div class="join-source-name">Stores</div></div>
+              <div class="join-source"><div class="join-source-icon">CSV · 04</div><div class="join-source-name">Employees</div></div>
+            </div>
+            <div class="join-merger">↓</div>
+            <div class="join-target">
+              <div class="join-target-name">Unified Schema — Customer × Time × Product</div>
+              <div class="join-target-sub">+ Date dimension · Daypart buckets · RFM segmentation</div>
+            </div>
+            <div class="join-merger">↓</div>
+            <div class="join-outputs">
+              <div class="join-output"><div class="join-output-icon">KPI 01</div><div class="join-output-name">Avg Basket Size</div></div>
+              <div class="join-output"><div class="join-output-icon">KPI 02</div><div class="join-output-name">Repeat-Visit Interval</div></div>
+              <div class="join-output"><div class="join-output-icon">KPI 03</div><div class="join-output-name">Product-Pair Lift</div></div>
+            </div>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
 
-      <a href="https://github.com/Rishapp800/SQL-Data-Analysis-Projects" target="_blank" rel="noopener" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">003</div>
-        <div>
-          <h3 class="work-title">Business Analytics <span class="it">in SQL</span></h3>
-          <div class="work-cat">SQL · BUSINESS LOGIC · REPORTING</div>
-        </div>
-        <div>
-          <p class="work-desc">A working portfolio of T-SQL solutions — segmentation, cohort analysis, funnel queries, and revenue breakdowns. The SQL business analysts run daily to answer "who", "when", and "how much" for leadership.</p>
-          <div class="work-tags">
-            <span>T-SQL</span><span>Business logic</span><span>Cohort analysis</span><span>Operational reporting</span>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-label">Problem</div>
+            <p class="case-content">A regional coffee chain wanted to know which products and dayparts drove repeat purchases — but the POS exports were four disconnected CSVs with no shared schema, no time-of-day rollups, and no segments. Leadership was making merchandising calls on gut feel.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Approach</div>
+            <p class="case-content">Normalized the four CSVs into a star schema. Added a date dimension with morning · midday · afternoon · evening buckets. Used <strong>window functions</strong> (LAG, RANK, NTILE) for cohort and product-pair analysis, then layered an <strong>RFM segmentation</strong> to find loyalty tiers.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Stack</div>
+            <div class="case-content">
+              <div class="case-stack">
+                <span class="case-tag">T-SQL</span>
+                <span class="case-tag">Window Functions</span>
+                <span class="case-tag">CTEs</span>
+                <span class="case-tag">MSSQL</span>
+                <span class="case-tag">RFM</span>
+                <span class="case-tag">Excel</span>
+              </div>
+            </div>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Result</div>
+            <div class="case-content">
+              <div class="case-insight" style="margin-top: 0;">
+                <div class="case-insight-label">Repeat-visit intensity · daypart × basket type</div>
+                <div class="hm-grid">
+                  <div class="hm-axis"></div>
+                  <div class="hm-header">Single Item</div>
+                  <div class="hm-header">Pair (Coffee + X)</div>
+                  <div class="hm-header">Triple+</div>
+
+                  <div class="hm-axis">Morning</div>
+                  <div class="hm-cell med">Medium</div>
+                  <div class="hm-cell high">80% repeat ★</div>
+                  <div class="hm-cell med">Medium</div>
+
+                  <div class="hm-axis">Midday</div>
+                  <div class="hm-cell low">Low</div>
+                  <div class="hm-cell med">Medium</div>
+                  <div class="hm-cell low">Low</div>
+
+                  <div class="hm-axis">Afternoon</div>
+                  <div class="hm-cell low">Low</div>
+                  <div class="hm-cell low">Low</div>
+                  <div class="hm-cell low">Low</div>
+
+                  <div class="hm-axis">Evening</div>
+                  <div class="hm-cell low">Low</div>
+                  <div class="hm-cell low">Low</div>
+                  <div class="hm-cell low">Low</div>
+                </div>
+                <div class="hm-callout">~80% repeat visits concentrate in <strong style="color:var(--ink); background:none; padding:0;">morning coffee+pastry pairs</strong> · 23% basket lift on weekends · 4 product pairs flagged for register co-location.</div>
+              </div>
+            </div>
+          </div>
+          <div class="case-row case-reflection">
+            <div class="case-label">What I'd Do Differently</div>
+            <p class="case-content">Model RFM thresholds <em>dynamically</em> by season instead of fixed quartile cuts — holiday weeks inflated the "loyal customer" tier. Rebuild in <em>dbt</em> so lineage, tests, and docs live alongside the queries.</p>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
+        <a class="case-link" href="https://github.com/Rishapp800/SQL-Data-Analysis-Projects/tree/main/Retail%20Coffee%20Chain%20Data%20Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </article>
 
-      <a href="https://github.com/Rishapp800/PowerBI-Dashboards" target="_blank" rel="noopener" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">004</div>
-        <div>
-          <h3 class="work-title">Power BI <span class="it">Performance Dashboards</span></h3>
-          <div class="work-cat">POWER BI · SELF-SERVICE BI</div>
-        </div>
-        <div>
-          <p class="work-desc">Power BI reports built for commercial &amp; operational users — interactive filters, drill-throughs, and DAX measures that move stakeholders from "I need a report" to "I see the answer."</p>
-          <div class="work-tags">
-            <span>Power BI</span><span>DAX</span><span>Self-service BI</span><span>Drill-down design</span>
+      <!-- CASE 03 — Airline Customer Sentiment (Tableau) -->
+      <article class="case">
+        <header class="case-head">
+          <div class="case-num">CASE 03 · TABLEAU · CUSTOMER ANALYTICS</div>
+          <h3 class="case-title">Airline Customer <span class="it">Sentiment Analysis</span></h3>
+          <div class="case-meta">Tableau · Python (NLTK) · LOD Expressions · Indie Project</div>
+        </header>
+
+        <div class="case-hero-viz">
+          <div class="case-viz-label">From raw survey text to actionable NPS signal</div>
+          <div class="nlp-stages">
+            <div class="nlp-stage">
+              <div class="nlp-stage-num">STAGE 01</div>
+              <div class="nlp-stage-title">Raw Survey Text</div>
+              <div class="nlp-stage-sub">Free-form comments at scale</div>
+            </div>
+            <div class="nlp-arrow">→</div>
+            <div class="nlp-stage">
+              <div class="nlp-stage-num">STAGE 02</div>
+              <div class="nlp-stage-title">NLTK Pipeline</div>
+              <div class="nlp-stage-sub">Tokenize · Stem · Score</div>
+            </div>
+            <div class="nlp-arrow">→</div>
+            <div class="nlp-stage">
+              <div class="nlp-stage-num">STAGE 03</div>
+              <div class="nlp-stage-title">6 Categories</div>
+              <div class="nlp-stage-sub">Cabin · Food · Baggage · Delays · Seating · Other</div>
+            </div>
+            <div class="nlp-arrow">→</div>
+            <div class="nlp-stage">
+              <div class="nlp-stage-num">STAGE 04</div>
+              <div class="nlp-stage-title">Tableau Dashboard</div>
+              <div class="nlp-stage-sub">LOD · normalized by route volume</div>
+            </div>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
 
-      <a href="#" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">005</div>
-        <div>
-          <h3 class="work-title">Coffee Chain <span class="it">Business Insights</span></h3>
-          <div class="work-cat">RETAIL ANALYTICS · OPERATIONS INSIGHT</div>
-        </div>
-        <div>
-          <p class="work-desc">Exploratory analysis on a coffee chain's transaction data — surfaced product affinity, hourly traffic patterns, and store-level revenue drivers to inform merchandising, staffing, and operational decisions.</p>
-          <div class="work-tags">
-            <span>Python</span><span>pandas</span><span>Operational analytics</span><span>Retail</span><span>EDA</span>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-label">Problem</div>
+            <p class="case-content">NPS scores were declining but the post-flight survey data was unstructured — thousands of free-text comments. Ops didn't know where to focus: cabin, delays, food, baggage, or seating. Response counts varied wildly across routes, making raw averages misleading.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Approach</div>
+            <p class="case-content">Built a 4-stage pipeline (above): clean text → NLTK classify into 6 categories → normalize by route volume so small routes weren't drowned out → render in a Tableau dashboard with <strong>LOD expressions</strong> that recompute correctly across user filters.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Stack</div>
+            <div class="case-content">
+              <div class="case-stack">
+                <span class="case-tag">Tableau</span>
+                <span class="case-tag">Python · NLTK</span>
+                <span class="case-tag">LOD Expressions</span>
+                <span class="case-tag">Calculated Fields</span>
+                <span class="case-tag">Parameters</span>
+              </div>
+            </div>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Result</div>
+            <div class="case-content">
+              <div class="case-insight" style="margin-top: 0;">
+                <div class="case-insight-label">NPS detractor density · route × category</div>
+                <div class="hm-grid cols6">
+                  <div class="hm-axis"></div>
+                  <div class="hm-header">Cabin</div>
+                  <div class="hm-header">Food</div>
+                  <div class="hm-header">Baggage</div>
+                  <div class="hm-header">Delays</div>
+                  <div class="hm-header">Seating</div>
+                  <div class="hm-header">Other</div>
+
+                  <div class="hm-axis">Domestic SH</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell good">Low</div>
+
+                  <div class="hm-axis">Domestic LH</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell bad">High</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell good">Low</div>
+
+                  <div class="hm-axis">Intl SH</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell bad">High</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell good">Low</div>
+
+                  <div class="hm-axis">Intl LH</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell bad">High</div>
+                  <div class="hm-cell worst">#1 ★</div>
+                  <div class="hm-cell med">Med</div>
+                  <div class="hm-cell good">Low</div>
+                  <div class="hm-cell good">Low</div>
+                </div>
+                <div class="hm-callout">Baggage was the <strong style="color:var(--ink); background:none; padding:0;">#1 NPS detractor on long-haul international</strong> — a category previously buried in generic "service" comments. Recommended targeted ops training + baggage-time SLA.</div>
+              </div>
+            </div>
+          </div>
+          <div class="case-row case-reflection">
+            <div class="case-label">What I'd Do Differently</div>
+            <p class="case-content">Move from rule-based NLP to a <em>transformer model</em> — keyword classifier missed sarcasm and mixed-sentiment. Add a confidence threshold so low-volume routes get <em>flagged</em>, not just down-weighted.</p>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
+        <a class="case-link" href="https://github.com/Rishapp800/Tableau-Dashboards/tree/main/Airline%20Customer%20Sentiment%20Analysis" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </article>
 
-      <a href="#" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">006</div>
-        <div>
-          <h3 class="work-title">Predictive <span class="it">Modeling</span></h3>
-          <div class="work-cat">PYTHON ML · BUSINESS FORECASTING</div>
-        </div>
-        <div>
-          <p class="work-desc">Built an end-to-end ML pipeline using Python — feature engineering, model training, and threshold tuning. The same methods transfer to business problems like demand forecasting, churn prediction, and risk scoring.</p>
-          <div class="work-tags">
-            <span>Python</span><span>Scikit-learn</span><span>Feature engineering</span><span>Forecasting</span>
+      <!-- CASE 04 — HR People Analytics (Power BI) -->
+      <article class="case">
+        <header class="case-head">
+          <div class="case-num">CASE 04 · POWER BI · PEOPLE ANALYTICS</div>
+          <h3 class="case-title">HR Attrition — <span class="it">a watch-list dashboard</span></h3>
+          <div class="case-meta">Power BI · DAX · Star Schema · HRIS Integration · Indie Project</div>
+        </header>
+
+        <div class="case-hero-viz">
+          <div class="case-viz-label">Attrition risk signals · weighted</div>
+          <div class="risk-list">
+            <div class="risk-item star">
+              <div class="risk-name">Manager change in current quarter</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 95%;"></div></div>
+              <div class="risk-icon">★</div>
+            </div>
+            <div class="risk-item star">
+              <div class="risk-name">Satisfaction score &lt; 3.5 in quarter</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 88%;"></div></div>
+              <div class="risk-icon">★</div>
+            </div>
+            <div class="risk-item">
+              <div class="risk-name">Satisfaction trending down (3 qtrs)</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 72%;"></div></div>
+              <div class="risk-icon">↑</div>
+            </div>
+            <div class="risk-item">
+              <div class="risk-name">Tenure under 1 year</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 60%;"></div></div>
+              <div class="risk-icon">↑</div>
+            </div>
+            <div class="risk-item">
+              <div class="risk-name">Promotion velocity slow (3+ years)</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 54%;"></div></div>
+              <div class="risk-icon">↑</div>
+            </div>
+            <div class="risk-item">
+              <div class="risk-name">Tenure 1–3 years</div>
+              <div class="risk-bar"><div class="risk-bar-fill" style="width: 28%;"></div></div>
+              <div class="risk-icon">↓</div>
+            </div>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
 
-      <a href="https://github.com/Rishapp800/Certifications" target="_blank" rel="noopener" class="work-item" style="text-decoration:none; color:inherit; display:grid;">
-        <div class="work-num">007</div>
-        <div>
-          <h3 class="work-title">Certifications &amp; <span class="it">Coursework</span></h3>
-          <div class="work-cat">LEARNING · CREDENTIALS</div>
-        </div>
-        <div>
-          <p class="work-desc">A running log of professional certifications and structured coursework — covering analytics, BI tooling, business analysis methodologies, and project management frameworks.</p>
-          <div class="work-tags">
-            <span>Continuous learning</span><span>Credentials</span>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-label">Problem</div>
+            <p class="case-content">Attrition climbing, but HR couldn't say <em>why</em> with specificity. Exit ratings, tenure, satisfaction, and manager-change events sat in three different HRIS systems — no unified view, no early-warning signal.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Approach</div>
+            <p class="case-content">Built a unified employee fact table from disparate HRIS exports. Defined 6 attrition signals (above) and ranked them by predictive weight. A <strong>3-tab Power BI report</strong>: attrition overview · department heatmap · watch-list view filtering on multi-signal risk. <strong>DAX time intelligence</strong> for rolling 6-month rate; star schema for filter performance.</p>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Stack</div>
+            <div class="case-content">
+              <div class="case-stack">
+                <span class="case-tag">Power BI</span>
+                <span class="case-tag">DAX</span>
+                <span class="case-tag">Time Intelligence</span>
+                <span class="case-tag">Power Query (M)</span>
+                <span class="case-tag">Star Schema</span>
+                <span class="case-tag">RLS</span>
+              </div>
+            </div>
+          </div>
+          <div class="case-row">
+            <div class="case-label">Result</div>
+            <div class="case-content">
+              <div class="mult-grid">
+                <div class="mult-card">
+                  <div class="mult-num">4<span class="mult-unit">×</span></div>
+                  <div class="mult-label">Attrition multiplier</div>
+                  <div class="mult-card-sub">Employees with manager change AND sub-3.5 satisfaction in the same quarter.</div>
+                </div>
+                <div class="mult-card">
+                  <div class="mult-num">~12<span class="mult-unit">/qtr</span></div>
+                  <div class="mult-label">Flagged for proactive 1:1s</div>
+                  <div class="mult-card-sub">Watch-list view surfaced these for HR each quarter.</div>
+                </div>
+              </div>
+              <p style="margin-top: 14px;">Early-intervention conversations tied to a measurable drop in voluntary attrition the following quarter.</p>
+            </div>
+          </div>
+          <div class="case-row case-reflection">
+            <div class="case-label">What I'd Do Differently</div>
+            <p class="case-content">Add <em>row-level security by HR business partner</em>, not just URL gating — sensitive people data needs real access controls. Frame the model as <em>descriptive, not predictive</em>, and run a separate logistic regression to validate causal direction before any HR intervention.</p>
           </div>
         </div>
-        <div class="work-arrow">↗</div>
-      </a>
+        <a class="case-link" href="https://github.com/Rishapp800/PowerBI-Dashboards/tree/main/HR%20Data%20Analytics%20Dashboard" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </article>
 
     </div>
   </div>
@@ -2091,44 +4243,177 @@
 
     <div class="exp-list">
 
+      <!-- ROLE 1: VIS — Function Spread Stacked Bar + Impact Wins -->
       <div class="exp-item">
-        <div class="exp-when">Jun 2025 – Present</div>
-        <div>
-          <h4 class="exp-role">Business Operations Lead (U.S.)</h4>
-          <div class="exp-company">VIS Global · Enterprise Technology Solutions</div>
+        <div class="exp-when">
+          Jun 2025 – Present
+          <div class="exp-when-tag">Current</div>
         </div>
-        <ul class="exp-bullets">
-          <li>Lead U.S. market expansion for a 20+ year technology solutions firm — client roster includes Viacom and Cox — across Contact Center &amp; CX (Avaya, Genesys, Cisco, Five9, NICE), AV / Collaboration (Teams Rooms, Zoom Rooms, Webex), Network Security (Palo Alto, Fortinet), and proprietary automation products (DiGON, RADIUS).</li>
-          <li>Designed and built an end-to-end B2B lead generation &amp; outreach system in n8n — six interconnected workflows orchestrating personalized email sequences, bounce / reply detection, and LinkedIn outreach via Unipile.</li>
-          <li>Integrated stack: NocoDB (CRM), Apollo.io (verification), Apify (LinkedIn scraping), SerpAPI, Gmail, and LLM-driven personalization (Grok / GPT) for individualized email and DM copy at scale.</li>
-          <li>Built multi-stage funnel tracking (sequence and connection status) so every lead is measurable — deliverability, engagement, replies, and meetings booked — turning outbound into a data-driven program.</li>
-        </ul>
+        <div>
+          <h4 class="exp-role">Business Operations Analyst</h4>
+          <div class="exp-company">VIS – Europe &amp; Americas · Enterprise Tech</div>
+        </div>
+        <div>
+          <p class="exp-brief">Driving U.S. &amp; EU operations for a 20+ year enterprise tech firm — clients include <strong>Viacom and Cox</strong> — across CX, AV, Network &amp; proprietary automation.</p>
+
+          <div class="exp-spread">
+            <div class="exp-spread-cap">Role function spread</div>
+            <div class="exp-spread-bar">
+              <div class="exp-spread-seg s1" style="flex: 30;"><span>Business Ops</span><span class="seg-pct">30%</span></div>
+              <div class="exp-spread-seg s2" style="flex: 25;"><span>Dashboards</span><span class="seg-pct">25%</span></div>
+              <div class="exp-spread-seg s3" style="flex: 30;"><span>Automation</span><span class="seg-pct">30%</span></div>
+              <div class="exp-spread-seg s4" style="flex: 15;"><span>CRM Ops</span><span class="seg-pct">15%</span></div>
+            </div>
+          </div>
+
+          <ul class="exp-wins">
+            <li><span class="win-mark">★</span> Built a <strong>6-workflow n8n outbound system</strong> live in production — see Case 01 above</li>
+            <li><span class="win-mark">★</span> Power BI &amp; Tableau across CRM, pipeline &amp; telemetry — feeding executive planning &amp; capacity reviews</li>
+            <li><span class="win-mark">★</span> Own CRM hygiene &amp; data integrity · UAT &amp; root-cause analysis across B2B platform releases</li>
+          </ul>
+
+          <div class="exp-tools">
+            <span class="tool-chip">n8n</span>
+            <span class="tool-chip">Power BI</span>
+            <span class="tool-chip">Tableau</span>
+            <span class="tool-chip">NocoDB</span>
+            <span class="tool-chip">Apollo</span>
+            <span class="tool-chip">Apify</span>
+            <span class="tool-chip">Unipile</span>
+            <span class="tool-chip">Grok / GPT-4</span>
+          </div>
+        </div>
       </div>
 
+      <!-- ROLE 2: BRIGHT MIND — Stat Strip (4-cell impact dashboard) -->
       <div class="exp-item">
         <div class="exp-when">Aug 2024 – Jun 2025</div>
         <div>
           <h4 class="exp-role">Data Analyst</h4>
-          <div class="exp-company">Bright Mind Enrichment &amp; Schooling</div>
+          <div class="exp-company">Bright Mind Enrichment · Texas</div>
         </div>
-        <ul class="exp-bullets">
-          <li>Owned reporting and analysis across student, program, and operational data — surfacing the trends that informed weekly business reviews.</li>
-          <li>Built ETL flows in SSIS / Alteryx to consolidate data from multiple source systems into a single source of truth.</li>
-          <li>Delivered Power BI and Tableau dashboards used by leadership for performance reviews and resource allocation decisions.</li>
-        </ul>
+        <div>
+          <p class="exp-brief">Built the analytics backbone for an enrichment org — dashboards, ETL pipelines, and infrastructure migration to AWS.</p>
+
+          <div class="exp-stat-strip">
+            <div class="stat-cell">
+              <div class="stat-num">30+</div>
+              <div class="stat-label">Stakeholders adopting Tableau dashboards</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">25%</div>
+              <div class="stat-label">Lift in data-informed decisions org-wide</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">20%</div>
+              <div class="stat-label">Decision-making efficiency gain</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">10+</div>
+              <div class="stat-label">Visualizations in Python &amp; R for cross-dept reporting</div>
+            </div>
+          </div>
+
+          <div class="exp-tools">
+            <span class="tool-chip">Tableau</span>
+            <span class="tool-chip">Python · Matplotlib</span>
+            <span class="tool-chip">R · ggplot2</span>
+            <span class="tool-chip">SSIS</span>
+            <span class="tool-chip">Alteryx</span>
+            <span class="tool-chip">MySQL · SQL Server</span>
+            <span class="tool-chip">AWS · RDS · S3</span>
+            <span class="tool-chip">Looker</span>
+          </div>
+        </div>
       </div>
 
+      <!-- ROLE 3: GOLDMAN SACHS — Hero Asymmetric Stat (1 big + 2 small) -->
       <div class="exp-item">
         <div class="exp-when">Jun 2023 – Aug 2023</div>
         <div>
-          <h4 class="exp-role">Data Analyst Intern</h4>
+          <h4 class="exp-role">Data Analyst Intern — Private Wealth</h4>
           <div class="exp-company">Goldman Sachs · Dallas, TX</div>
         </div>
-        <ul class="exp-bullets">
-          <li>Partnered on analytical projects across financial datasets, translating findings into stakeholder-ready narratives.</li>
-          <li>Built and maintained SQL queries and reporting workflows informing commercial decisions.</li>
-          <li>Contributed to dashboards and KPI definitions used across cross-functional teams.</li>
-        </ul>
+        <div>
+          <p class="exp-brief">Internship in GS Private Wealth Management — cleaned data, built segmentation models that <strong>advisors actually used</strong>.</p>
+
+          <div class="exp-hero-stat">
+            <div class="hero-stat-big">
+              <div class="hero-num">500K+</div>
+              <div class="hero-num-label">Private wealth records cleaned · SQL normalization · IQR outlier detection</div>
+            </div>
+            <div class="hero-stat-side">
+              <div class="side-stat">
+                <div class="side-num">90%</div>
+                <div class="side-num-rule"></div>
+                <div class="side-label">Data accuracy lift after cleaning + normalization</div>
+              </div>
+              <div class="side-stat">
+                <div class="side-num">80%</div>
+                <div class="side-num-rule"></div>
+                <div class="side-label">Portfolio personalization improvement from segmentation</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-tools">
+            <span class="tool-chip">SQL</span>
+            <span class="tool-chip">Python · Pandas · Scikit-learn</span>
+            <span class="tool-chip">Power BI · DAX</span>
+            <span class="tool-chip">Star Schema</span>
+            <span class="tool-chip">Excel · Power Query</span>
+            <span class="tool-chip">SharePoint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROLE 4: WE DEFINE NET — Skill Galaxy (categorized chip groups) -->
+      <div class="exp-item">
+        <div class="exp-when">Mar 2021 – Aug 2021</div>
+        <div>
+          <h4 class="exp-role">Data Analyst</h4>
+          <div class="exp-company">We Define Net · India</div>
+        </div>
+        <div>
+          <p class="exp-brief">First analyst role — automated reporting, ran A/B tests, mentored junior analysts.</p>
+
+          <div class="exp-galaxy">
+            <div class="galaxy-row">
+              <div class="galaxy-cat">DATA</div>
+              <div class="galaxy-chips">
+                <span class="tool-chip">SQL</span>
+                <span class="tool-chip">NoSQL</span>
+                <span class="tool-chip">Multi-source ETL</span>
+              </div>
+            </div>
+            <div class="galaxy-row">
+              <div class="galaxy-cat">SCIENCE</div>
+              <div class="galaxy-chips">
+                <span class="tool-chip">Python · SciPy</span>
+                <span class="tool-chip">NumPy</span>
+                <span class="tool-chip">R</span>
+                <span class="tool-chip">A/B Testing</span>
+                <span class="tool-chip">EDA</span>
+              </div>
+            </div>
+            <div class="galaxy-row">
+              <div class="galaxy-cat">REPORTING</div>
+              <div class="galaxy-chips">
+                <span class="tool-chip">Excel · VBA</span>
+                <span class="tool-chip">Power Pivot</span>
+                <span class="tool-chip">VLOOKUP / HLOOKUP</span>
+              </div>
+            </div>
+            <div class="galaxy-row">
+              <div class="galaxy-cat">LEADERSHIP</div>
+              <div class="galaxy-chips">
+                <span class="tool-chip">Exec Presentations</span>
+                <span class="tool-chip">Marketing &amp; Product Analytics</span>
+                <span class="tool-chip">Mentorship</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -2159,6 +4444,11 @@
         <div class="focus">
           Built early foundations in engineering, programming, and quantitative methods — and the analytical instincts that carried into business analytics.
         </div>
+        <div class="edu-honors">
+          <div class="edu-honor"><span class="edu-honor-tag">Award</span>Best Paper Award · EDGE-2020</div>
+          <div class="edu-honor"><span class="edu-honor-tag">Publication</span>Arduino-based Magnetic Levitation</div>
+          <div class="edu-honor"><span class="edu-honor-tag">Publication</span>Predictive Maintenance of Tires as Product Servitization</div>
+        </div>
       </div>
     </div>
   </div>
@@ -2172,14 +4462,46 @@
         From <span class="it">ambiguity,</span><br />
         to <span class="it">action.</span>
       </h2>
+
+      <div class="why-bridge-label">// Why I'm looking</div>
+      <p class="why-bridge">
+        A year deep in <strong>enterprise telecom and CX platforms</strong> at VIS. I'm looking for the next chapter in a different industry — bringing the same operations + analytics playbook to a new kind of problem.
+      </p>
+
       <p style="font-family:'Fraunces', serif; font-size:22px; max-width:640px; line-height:1.45; font-weight:300; color:rgba(241,236,224,0.85); margin:0 0 8px;">
-        Open to business analyst, data analyst, and project management roles — and adjacent product, ops, or strategy positions. Reach out if you're hiring, collaborating, or just want to talk shop.
+        Open to <em>Business Analyst</em>, <em>Data Analyst</em>, <em>Marketing Analyst</em>, and <em>Operations Analyst</em> roles across the U.S. — and adjacent product, ops, or strategy positions. Reach out if you're hiring, collaborating, or just want to talk shop.
       </p>
       <div class="cta-links">
         <a class="cta-link primary" href="mailto:rishapp0208@gmail.com">✉ Email</a>
+        <a class="cta-link" href="tel:+14699709661">☎ (469) 970-9661</a>
         <a class="cta-link" href="https://www.linkedin.com/in/rishapprajesh/" target="_blank" rel="noopener">in · LinkedIn</a>
         <a class="cta-link" href="https://github.com/Rishapp800/" target="_blank" rel="noopener">◇ GitHub</a>
-        <a class="cta-link" href="#" download>↓ Résumé (PDF)</a>
+      </div>
+
+      <div class="resume-row">
+        <div class="resume-row-label">Download Résumé · Tuned for Role · Hover for focus</div>
+        <div class="resume-row-grid">
+          <a class="resume-chip" href="Rishapp_Rajesh_Business_Analyst.docx" download data-tip="Stakeholders · requirements · process · KPI reporting">
+            <span class="role-num">01</span>
+            <span>Business Analyst</span>
+            <span class="download-arrow">↓</span>
+          </a>
+          <a class="resume-chip" href="Rishapp_Rajesh_Data_Analyst.docx" download data-tip="Python · SQL · modeling · ML segmentation · dashboards">
+            <span class="role-num">02</span>
+            <span>Data Analyst</span>
+            <span class="download-arrow">↓</span>
+          </a>
+          <a class="resume-chip" href="Rishapp_Rajesh_Marketing_Analyst.docx" download data-tip="Campaign analytics · attribution · funnel · SQL · BI">
+            <span class="role-num">03</span>
+            <span>Marketing Analyst</span>
+            <span class="download-arrow">↓</span>
+          </a>
+          <a class="resume-chip" href="Rishapp_Rajesh_Operations_Analyst.docx" download data-tip="Process · automation · CRM ops · KPI dashboards">
+            <span class="role-num">04</span>
+            <span>Operations Analyst</span>
+            <span class="download-arrow">↓</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -2219,22 +4541,32 @@
 </div>
 
 <script>
-  // Reveal sections on scroll
+  // Reveal sections on scroll + staggered card reveals
+  const revealSection = (section) => {
+    section.classList.add('show');
+    // Stagger-reveal cards within the section
+    const items = section.querySelectorAll('.case, .exp-item, .edu-card, .capability, .ft-stat, .stat-cell');
+    items.forEach((el, i) => {
+      el.style.transitionDelay = (i * 80) + 'ms';
+      el.classList.add('in-view');
+    });
+  };
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    entries.forEach(entry => { if (entry.isIntersecting) revealSection(entry.target); });
   }, { threshold: 0.1 });
   document.querySelectorAll('section').forEach(el => {
     el.classList.add('reveal'); observer.observe(el);
   });
 
-  // Make nav buttons scroll + reveal target sections
-  document.querySelectorAll('nav.top button[data-target]').forEach(btn => {
+  // Scroll + reveal target sections — works for nav buttons AND featured-cta
+  document.querySelectorAll('button[data-target]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const targetId = btn.getAttribute('data-target');
       const target = document.getElementById(targetId);
       if (!target) return;
       // Force the target to be visible immediately
-      target.classList.add('show');
+      revealSection(target);
       // Smooth scroll with offset for the sticky nav bar
       const navHeight = document.querySelector('nav.top').offsetHeight + 12;
       const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
@@ -2342,23 +4674,23 @@
               <div class="ig-title">Business Analyst · UT Dallas '24</div>
             </div>
           </div>
-          <p class="ig-intro">3+ years across data, analytics &amp; business operations. Translates ambiguous business problems into shipped, measurable outcomes.</p>
+          <p class="ig-intro">2+ years across data, analytics &amp; business operations. Translates ambiguous business problems into shipped, measurable outcomes.</p>
           <div class="ig-profile-stats">
-            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="3">0</span>+</div><div class="ig-pstat-label">Yrs Exp</div></div>
-            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="3">0</span></div><div class="ig-pstat-label">Roles</div></div>
+            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="2">0</span>+</div><div class="ig-pstat-label">Yrs Exp</div></div>
+            <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="4">0</span></div><div class="ig-pstat-label">Roles</div></div>
             <div class="ig-pstat"><div class="ig-pstat-num"><span class="ig-count" data-target="10">0</span>+</div><div class="ig-pstat-label">Tools</div></div>
           </div>
           <div class="ig-pills">
             <span class="ig-pill">📍 Dallas, TX</span>
             <span class="ig-pill">🎓 UT Dallas '24</span>
-            <span class="ig-pill">💼 VIS Global</span>
+            <span class="ig-pill">💼 VIS · EU &amp; Americas</span>
           </div>
         </div>`
       },
       {
         keywords: ['current', 'vis global', 'now', 'present', 'working on'],
         rich: `<div>
-          <div class="ig-wf-header">VIS Global · 6-Workflow Lead Gen System</div>
+          <div class="ig-wf-header">VIS – EU &amp; Americas · 6-Workflow Lead Gen System</div>
           <div class="ig-workflow-v2">
             <div class="ig-wf-card">
               <div class="ig-wf-icon">🎯</div>
@@ -2400,8 +4732,8 @@
             <div class="ig-tl-dot"></div>
             <div>
               <div class="ig-tl-when">Jun 2025 – Present</div>
-              <div class="ig-tl-role">Business Operations Lead (U.S.)</div>
-              <div class="ig-tl-co">VIS Global</div>
+              <div class="ig-tl-role">Business Operations Analyst</div>
+              <div class="ig-tl-co">VIS – Europe &amp; Americas</div>
             </div>
           </div>
           <div class="ig-tl-item">
@@ -2417,7 +4749,15 @@
             <div>
               <div class="ig-tl-when">Jun – Aug 2023</div>
               <div class="ig-tl-role">Data Analyst Intern</div>
-              <div class="ig-tl-co">Goldman Sachs · Dallas, TX</div>
+              <div class="ig-tl-co">Goldman Sachs · Private Wealth</div>
+            </div>
+          </div>
+          <div class="ig-tl-item">
+            <div class="ig-tl-dot"></div>
+            <div>
+              <div class="ig-tl-when">Mar – Aug 2021</div>
+              <div class="ig-tl-role">Data Analyst</div>
+              <div class="ig-tl-co">We Define Net · India</div>
             </div>
           </div>
         </div>`
@@ -2498,13 +4838,20 @@
         </div>`
       },
       {
-        keywords: ['contact', 'reach', 'connect', 'email', 'phone', 'linkedin', 'get in touch', 'message'],
+        keywords: ['contact', 'reach', 'connect', 'email', 'phone', 'linkedin', 'get in touch', 'message', 'call'],
         rich: `<div class="ig-contact">
           <a class="ig-contact-btn primary" href="mailto:rishapp0208@gmail.com">
             <span class="ig-contact-icon">✉</span>
             <div>
               <div class="ig-contact-label">Email</div>
               <div class="ig-contact-handle">rishapp0208@gmail.com</div>
+            </div>
+          </a>
+          <a class="ig-contact-btn" href="tel:+14699709661">
+            <span class="ig-contact-icon">☎</span>
+            <div>
+              <div class="ig-contact-label">Phone</div>
+              <div class="ig-contact-handle">(469) 970-9661</div>
             </div>
           </a>
           <a class="ig-contact-btn" href="https://www.linkedin.com/in/rishapprajesh/" target="_blank" rel="noopener">
@@ -2552,7 +4899,7 @@
                 <circle class="ig-ring-track" cx="40" cy="40" r="34" stroke-width="3" fill="none"/>
                 <circle class="ig-ring-fill" cx="40" cy="40" r="34" stroke-width="3" fill="none" style="--pct:0.85;" transform="rotate(-90 40 40)"/>
               </svg>
-              <div class="ig-rstat-inner"><div class="ig-rstat-num"><span class="ig-count" data-target="3">0</span>+</div></div>
+              <div class="ig-rstat-inner"><div class="ig-rstat-num"><span class="ig-count" data-target="2">0</span>+</div></div>
               <div class="ig-rstat-label">Years exp</div>
             </div>
             <div class="ig-rstat">
