@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<!-- Build: 2026-05-15-v4-spread-bar-vertical -->
+<!-- Build: 2026-05-15-v6-hero-copy -->
 <title>Rishapp Rajesh — Business Operations Analyst · Portfolio</title>
 <meta name="description" content="Rishapp Rajesh — Business Operations Analyst at VIS – Europe & Americas, MS Business Analytics from UT Dallas. Portfolio with case studies in SQL, Power BI, Tableau, Python, and end-to-end production automation systems." />
 <meta name="author" content="Rishapp Rajesh" />
@@ -1186,7 +1186,9 @@
   /* Impact "wins" list */
   .exp-wins { margin: 0 0 14px; padding: 0; list-style: none; }
   .exp-wins li {
-    display: flex; gap: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     padding: 5px 0;
     font-size: 14px; color: var(--ink-2);
     line-height: 1.5;
@@ -1194,8 +1196,11 @@
   .exp-wins .win-mark {
     color: var(--accent);
     font-family: "Fraunces", serif;
-    font-style: italic; font-size: 14px;
-    flex-shrink: 0; line-height: 1.5;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    flex: 0 0 auto;
+    align-self: baseline;
   }
   .exp-wins strong { color: var(--ink); font-weight: 500; }
 
@@ -3228,7 +3233,19 @@
     .exp-spread-cap { font-size: 9px; }
 
     /* Wins list */
-    .exp-wins li { font-size: 12.5px; padding: 4px 0; gap: 8px; }
+    .exp-wins { margin-bottom: 12px; }
+    .exp-wins li {
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+      padding: 5px 0 !important;
+      gap: 8px !important;
+      align-items: baseline !important;
+    }
+    .exp-wins .win-mark {
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+      align-self: baseline !important;
+    }
 
     /* Stat strip (Bright Mind) */
     .exp-stat-strip { grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -3627,14 +3644,14 @@
             <strong>Goldman Sachs</strong> <span class="arr">→</span> Bright Mind <span class="arr">→</span> <strong>VIS – Europe &amp; Americas</strong>
           </p>
           <p class="lede-bio">
-            I'm <span class="hl">Rishapp Rajesh</span> — business analyst, currently <strong>Business Operations Analyst</strong> at VIS – Europe &amp; Americas, where I run end-to-end process automation across pipeline, dashboards &amp; CRM.
+            I'm <span class="hl">Rishapp Rajesh</span> — currently <strong>Business Operations Analyst</strong> at VIS – Europe &amp; Americas, where I run end-to-end process automation across pipeline, dashboards &amp; CRM.
           </p>
           <div class="availability-strip">
             <span class="availability-dot">Available</span>
             <span class="availability-sep">·</span>
-            <span>Anywhere across the U.S.</span>
+            <span>Based in Dallas, Texas</span>
             <span class="availability-sep">·</span>
-            <span>Open to relocation</span>
+            <span>Open to relocation anywhere in the U.S.</span>
           </div>
         </div>
         <div class="roles">
