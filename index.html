@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<!-- Build: 2026-05-15-v6-hero-copy -->
+<!-- Build: 2026-05-15-v7-always-visible-on-mobile -->
 <title>Rishapp Rajesh — Business Operations Analyst · Portfolio</title>
 <meta name="description" content="Rishapp Rajesh — Business Operations Analyst at VIS – Europe & Americas, MS Business Analytics from UT Dallas. Portfolio with case studies in SQL, Power BI, Tableau, Python, and end-to-end production automation systems." />
 <meta name="author" content="Rishapp Rajesh" />
@@ -1536,8 +1536,10 @@
     color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
   }
 
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .reveal.show { opacity: 1; transform: translateY(0); }
+  /* Section reveal — only hide-then-fade on desktop. Mobile shows immediately. */
+  .reveal { opacity: 1; transform: none; transition: opacity 0.8s ease, transform 0.8s ease; }
+  html.js-anim .reveal { opacity: 0; transform: translateY(20px); }
+  html.js-anim .reveal.show { opacity: 1; transform: translateY(0); }
 
   /* === FEATURED WORK BAND (between stats and approach) === */
   .featured-work {
@@ -1703,23 +1705,34 @@
   }
 
   /* === STAGGER REVEAL for cards within sections === */
+  /* Cards default to visible — animation only enhances when JS fires */
   .case,
   .exp-item,
   .edu-card,
   .capability,
   .ft-stat,
   .stat-cell {
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
                 transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .case.in-view,
-  .exp-item.in-view,
-  .edu-card.in-view,
-  .capability.in-view,
-  .ft-stat.in-view,
-  .stat-cell.in-view {
+  /* Only HIDE pre-animation if JS has tagged html.js-anim */
+  html.js-anim .case,
+  html.js-anim .exp-item,
+  html.js-anim .edu-card,
+  html.js-anim .capability,
+  html.js-anim .ft-stat,
+  html.js-anim .stat-cell {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  html.js-anim .case.in-view,
+  html.js-anim .exp-item.in-view,
+  html.js-anim .edu-card.in-view,
+  html.js-anim .capability.in-view,
+  html.js-anim .ft-stat.in-view,
+  html.js-anim .stat-cell.in-view {
     opacity: 1;
     transform: translateY(0);
   }
@@ -4823,6 +4836,12 @@
 </div>
 
 <script>
+  // Only enable hide-then-reveal animation on desktop (≥901px with hover capability)
+  // On mobile/tablet, cards are visible immediately — no animation gating
+  if (window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
+    document.documentElement.classList.add('js-anim');
+  }
+
   // Reveal sections on scroll + staggered card reveals
   const revealSection = (section) => {
     section.classList.add('show');
@@ -4840,6 +4859,14 @@
   document.querySelectorAll('section').forEach(el => {
     el.classList.add('reveal'); observer.observe(el);
   });
+
+  // SAFETY FALLBACK: after 2s, force-reveal everything regardless of observer state.
+  // Catches edge cases where IntersectionObserver doesn't fire — fast scrolls,
+  // mobile browser quirks, or any JS hiccup. Content is guaranteed visible.
+  setTimeout(() => {
+    document.querySelectorAll('section.reveal').forEach(s => s.classList.add('show'));
+    document.querySelectorAll('.case, .exp-item, .edu-card, .capability, .ft-stat, .stat-cell').forEach(el => el.classList.add('in-view'));
+  }, 2000);
 
   // Scroll + reveal target sections — works for nav buttons AND featured-cta
   document.querySelectorAll('button[data-target]').forEach(btn => {
